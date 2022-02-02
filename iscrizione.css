@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(273deg, #b7b5b8, #a8f8b8);
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    background:white;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+.container .titolo{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .titolo::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(10deg, #b7b5b8, #a8f8b8);
+}
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box .detail{
+    display: block;
+    font-weight: 500;
+    margin-bottom:  5px;;
+}
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color:#b7b5b8; /* colore della label on-click */
+}
+form .scelta-sede-titolo{
+    display:table;
+    margin: 0 auto;
+}
+form .scelta-sede .scelta-sede-titolo{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .scelta-sede .scelta{
+    display: flex; /* se lo togli vanno uno sotto l'altro*/
+    width:  80%;
+    margin: 14px 60px;
+    justify-content: space-evenly;
+}
+form .scelta-sede .scelta label{
+    display: flex;
+    align-items: center;
+}
+form .scelta-sede .scelta .bottone{
+    height: 18px;
+    width: 18px;
+    background: #b7b5b8;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#belluno:checked ~ .scelta label .uno,
+#feltre:checked ~ .scelta label .due{
+    border-color: #b7b5b8;
+    background: black;
+}
+form input[type="radio"]{ /* nasconde i radio button */
+    display:none;
+}
+form button{
+    height: 45px;
+    margin: 45px 0;
+}
+form .button input{
+    height: 100%;
+    width: 100%;
+    color: rgba(12, 12, 12, 0.548);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: linear-gradient(273deg, #b7b5b8, #a8f8b8);
+}
+form .button input:hover{
+    background: linear-gradient(-273deg, #b7b5b8, #a8f8b8);
+    color: rgba(12, 12, 12, 0.548);
+    color: rgb(12, 12, 12);
+}
