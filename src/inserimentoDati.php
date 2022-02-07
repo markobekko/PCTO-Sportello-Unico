@@ -1,7 +1,7 @@
 <?php
     include 'connessione.php';
     connessione("localhost","Sportello Unico","root","");
-	if(isset($_POST['cognome']) && isset($_POST['nome'] && isset($_POST['codice_fiscale'] && isset($_POST['email'] && isset($_POST['data_esame'] && isset($_POST['sede_esame'])){
+	if(isset($_POST['cognome']) && isset($_POST['nome']) && isset($_POST['codice_fiscale']) && isset($_POST['email']) && isset($_POST['data_esame']) && isset($_POST['sede_esame'])){
         $cognome = $_POST['cognome'];
         $nome =  $_POST['nome'];
         $codice_fiscale = $_POST['codice_fiscale'];

@@ -66,7 +66,7 @@
                         echo "<option value=\"Non Ammesso\">Non Ammesso</option>";
                         echo "</select>";
                 echo "</td>";
-                echo "<td><input type=\"button\" value=\"Delete\" onclick=\"cancellaRiga(this)\"/></td>";
+                echo "<td><input type=\"button\" value=\"Delete\" onclick=\"cancellaPersona(this)\"/></td>";
             echo "</tr>";
         }
     }else{
