@@ -1,0 +1,33 @@
+
+if (codice_fiscale != null && data_esame != null && sede_esame != null && spedito_utente != null && esito_esame != null) {
+                            $.ajax({
+                            url: 'aggiornaTabella.php',
+                            method: 'POST',
+                            dataType: 'json',
+                            data: {
+                                codice_fiscale: codice_fiscale.val(),
+                                data_esame: data_esame.val(),
+                                sede_esame: sede_esame.val(),
+                                spedito_utente: spedito_utente.val(),
+                                esito_esame: esito_esame.val()
+                            }
+                            });
+                        }
+
+
+
+
+echo "<td>";
+                echo "<select data_esame = 'id'>";
+                $esame = "SELECT id_esame, data_esame, sede_esame  FROM Candidato, Sessione_Esame, Storico_Candidato
+                WHERE Candidato.id_candidato = Storico_Candidato.id_candidato AND Sessione_Esame.id_esame = Storico_Candidato.id_esame";
+                $risultatoEsame = $conn -> query($esame);
+                while ($row = $risultatoEsame->fetch_assoc()){
+                    unset($id_esame, $data_esame, $sede_esame);
+                    $id_esame = $row['id_esame'];
+                    $data_esame = $row['data_esame']; 
+                    $sede_esame = $row['sede_esame'];
+                    echo '<option value="'.$id_esame.'">'.$sede_esame." - ".$data_esame.'</option>';
+                }
+                echo "</select>";
+            echo "</td>";
