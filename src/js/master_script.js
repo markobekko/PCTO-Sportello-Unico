@@ -1,5 +1,7 @@
+// Funzione di ricerca della parole per ogni valore degli <input> nella tabella
 function cercaParole(){
     $(document).ready(function(){
+        // Numero delle colonne da cercare
         var notFoundCount = -6;
         $("#cerca").on("keyup", function() {
         var value = $(this).val().toLowerCase(),
@@ -18,15 +20,20 @@ function cercaParole(){
         });
     });
 }
+// Aggiorna la tabella
 function aggiornaTabella(){
     table.load("ricezioneDati.php");
 }
+// Ritorna al menù senza salvare
 function esciSenzaSalvare(){
     table.load("ricezioneDati.php");
 }
+// Salva i dati nella tabella nel DB e poi esce
 function esciSalvando(){
     $('#tabella tr').each(function(index) {
+        // index diverso da 0 ovvero escludendo il nome delle colonne (Cognome, Nome, Codice Fiscale ecc.)
         if(index != 0){
+            // Prende il valore degli <input> e li salva nella variabile apposita
             var cognome = $(this).find("#cognome").val().trim();
             var nome = $(this).find("#nome").val().trim();
             var codice_fiscale = $(this).find("#codice_fiscale").val().trim();
@@ -39,6 +46,7 @@ function esciSalvando(){
                 var spedito_utente = false;
             var esito_esame = $(this).find('#esito option:selected').text().trim();
             if (codice_fiscale != null && data_esame != null && spedito_utente != null && esito_esame != null) {
+                // Invia una richiesta POST al file php passandogli come parametri le variabili
                 $.ajax({
                     type:"POST",
                     url: "aggiornaTabella.php",
@@ -51,12 +59,18 @@ function esciSalvando(){
         }
     });
 }
+// Archivia la persona se il suo esito è "Superato"
 function archiviaPersona(){
     $('#tabella tr').each(function(index) {
+        // index diverso da 0 ovvero escludendo il nome delle colonne (Cognome, Nome, Codice Fiscale ecc.)
         if(index != 0){
+            // Prende il valore degli <input> e li salva nella variabile apposita
             var codice_fiscale = $(this).find("#codice_fiscale").val().trim();
             var esito_esame = $(this).find('#esito option:selected').text().trim();
+            console.log(esito_esame);
+            console.log(codice_fiscale);
             if (codice_fiscale != null && esito_esame != null) {
+                // Invia una richiesta POST al file php passandogli come parametri le variabili
                 $.ajax({
                     type:"POST",
                     url: "archiviaPersona.php",
@@ -69,9 +83,11 @@ function archiviaPersona(){
         }
     });
 }
+// Cancella la persona dalla tabella e dal DB
 function cancellaPersona(bottone) {
     var row = bottone.parentNode.parentNode;
     $('#tabella tbody tr').each(function(index) {
+        // Se l'indice della riga è uguale all'indice del bottone premuto
         if(index === (row.rowIndex - 1)){
             var codice_fiscale = $(this).find("#codice_fiscale").val().trim();
             console.log(codice_fiscale);
@@ -87,5 +103,24 @@ function cancellaPersona(bottone) {
             }
         }
     });
+    // Rimuove la persona dalla tabella
     row.parentNode.removeChild(row);
+}
+function aggiornaSedi(){
+    var intervalId = window.setInterval(function(){
+        document.getElementById("numBelluno").value = 0;
+        document.getElementById("numFeltre").value = 0;
+        $('#tabella tr').each(function(index) {
+            if(index != 0){
+                var data_esame = $(this).find("#esame option:selected").text().trim();
+                const esame = data_esame.split(" - ");
+                if(esame[1] == "Belluno"){
+                    document.getElementById("numBelluno").stepUp(1);
+                }
+                else{
+                    document.getElementById("numFeltre").stepUp(1);
+                }
+            }
+        });
+    }, 500);
 }

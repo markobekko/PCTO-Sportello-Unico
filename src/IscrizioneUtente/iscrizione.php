@@ -11,17 +11,7 @@
         $sede_esame = $_POST['sede_esame'];
 
         if(!controlloCodiceFiscale($codice_fiscale)){
-            echo "
-            <script>
-            try {
-                alert(\"A computer science portal\");
-            }
-            catch(err) {
-                document.getElementById(\"gfg\").innerHTML
-                        = err.message;
-            }
-            </script>
-            ";
+            # TODO: Aggiungi messaggio errore
             exit();
         }
         if(!controlloEmail($email)){
