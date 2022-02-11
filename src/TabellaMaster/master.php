@@ -30,6 +30,7 @@
                 };
                 document.getElementById('esciSenzaSalvare').onclick = function() {
                     esciSenzaSalvare();
+                    aggiornaTabella();
                 };
                 document.getElementById('esciSalva').onclick = function() {
                     esciSalvando();
@@ -37,6 +38,7 @@
                 };
                 document.getElementById('archivia').onclick = function() {
                     archiviaPersona();
+                    aggiornaTabella();
                 };
             </script>
         </div>
