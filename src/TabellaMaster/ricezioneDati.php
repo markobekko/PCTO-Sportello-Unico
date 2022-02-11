@@ -23,13 +23,13 @@
         ";
         while($row=$risultatoCandidato -> fetch_assoc()){
             if($row["archiviato"] == "No"){
-                $risultatoEsame = $conn -> query("SELECT id_esame, data_esame, sede_esame FROM Sessione_Esame");
                 if($row["spedito_utente"] == "Si"){
                     $valoreSpedizione = "<input name=\"check_box\" id=\"check_box\" type=\"checkbox\" id=\"spedito_utente\" checked=\"true\">";
                 }
                 else{
                     $valoreSpedizione = "<input name=\"check_box\" id=\"check_box\" type=\"checkbox\" id=\"spedito_utente\">";
                 }
+                $risultatoEsame = $conn -> query("SELECT id_esame, data_esame, sede_esame FROM Sessione_Esame");
                 echo "<tr>";
                     echo "<td>". "<input name=\"cognome\" id=\"cognome\" type=\"text\" value=\"". $row["cognome"] ."\">"."</td>";
                     echo "<td>". "<input name=\"nome\" id=\"nome\" type=\"text\" value=\"". $row["nome"] ."\">" ."</td>";

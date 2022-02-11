@@ -34,7 +34,6 @@
                 };
                 document.getElementById('esciSalva').onclick = function() {
                     esciSalvando();
-                    aggiornaTabella();
                 };
                 document.getElementById('archivia').onclick = function() {
                     archiviaPersona();

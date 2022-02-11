@@ -45,6 +45,7 @@ function esciSalvando(){
             else
                 var spedito_utente = false;
             var esito_esame = $(this).find('#esito option:selected').text().trim();
+            console.log(esame[0] + " " + esame[1]);
             if (codice_fiscale != null && data_esame != null && spedito_utente != null && esito_esame != null) {
                 // Invia una richiesta POST al file php passandogli come parametri le variabili
                 $.ajax({
