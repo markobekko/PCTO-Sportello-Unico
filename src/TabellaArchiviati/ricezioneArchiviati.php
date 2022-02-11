@@ -22,29 +22,17 @@
         ";
         while($row=$risultatoCandidato -> fetch_assoc()){
             if($row["archiviato"] == "Si"){
+                $risultatoEsame = $conn -> query("SELECT id_esame, data_esame, sede_esame FROM Sessione_Esame");
                 echo "<tr>";
-                echo "<td>". "<input name=\"cognome\" id=\"cognome\" type=\"text\" value=\"".$row["cognome"]."\" readonly=\"readonly\">"."</td>";
-                echo "<td>". "<input name=\"nome\" id=\"nome\" type=\"text\" value=\"".$row["nome"]."\" readonly=\"readonly\">" ."</td>";
-                echo "<td>". "<input name=\"codice_fiscale\" id=\"codice_fiscale\" type=\"text\" readonly=\"readonly\" value=\"".$row["codice_fiscale"]."\" readonly=\"readonly\">" ."</td>";
-                echo "<td>". "<input name=\"email\" id=\"email\" type=\"email\" value=\"".$row["email"]."\" readonly=\"readonly\">" ."</td>";
+                echo "<td>". "<input name=\"cognome\" id=\"cognome\" type=\"text\" value=\"". $row["cognome"] ."\" readonly=\"readonly\">"."</td>";
+                echo "<td>". "<input name=\"nome\" id=\"nome\" type=\"text\" value=\"". $row["nome"] ."\" readonly=\"readonly\">" ."</td>";
+                echo "<td>". "<input name=\"codice_fiscale\" id=\"codice_fiscale\" type=\"text\" readonly=\"readonly\" value=\"". $row["codice_fiscale"] ."\" readonly=\"readonly\">" ."</td>";
+                echo "<td>". "<input name=\"email\" id=\"email\" type=\"email\" value=\"". $row["email"] ."\" readonly=\"readonly\">" ."</td>";
                 echo "<td>";
                     echo "<select name=\"esame\" id=\"esame\" disabled>";
-
-                    $connEsame = mysqli_connect("localhost","root","","Sportello Unico");
-                    $risultatoEsame = $connEsame -> query("SELECT id_esame, data_esame, sede_esame FROM Sessione_Esame");
-
-                    unset($id_esame, $data_esame, $sede_esame);
-                    $id_esame = $row['id_esame'];
-                    $data_esame = $row['data_esame']; 
-                    $sede_esame = $row['sede_esame'];
-                    echo '<option hidden value="'.$id_esame.'">'.$data_esame." - ".$sede_esame.'</option>';
-
+                    echo '<option hidden value="'. $row['id_esame'] .'">'. $row['data_esame'] ." - ". $row['sede_esame'] .'</option>';
                     while ($row2 = $risultatoEsame->fetch_assoc()){
-                        unset($id_esame, $data_esame, $sede_esame);
-                        $id_esame = $row2['id_esame'];
-                        $data_esame = $row2['data_esame']; 
-                        $sede_esame = $row2['sede_esame'];
-                        echo '<option value="'.$id_esame.'">'.$data_esame." - ".$sede_esame.'</option>';
+                        echo '<option value="'. $row2['id_esame'] .'">'. $row2['data_esame'] ." - ". $row2['sede_esame'] .'</option>';
                     }
                     echo "</select>";
                 echo "</td>";

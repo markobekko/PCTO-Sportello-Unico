@@ -114,12 +114,10 @@ function aggiornaSedi(){
             if(index != 0){
                 var data_esame = $(this).find("#esame option:selected").text().trim();
                 const esame = data_esame.split(" - ");
-                if(esame[1] == "Belluno"){
+                if(esame[1] == "Belluno")
                     document.getElementById("numBelluno").stepUp(1);
-                }
-                else{
+                else
                     document.getElementById("numFeltre").stepUp(1);
-                }
             }
         });
     }, 500);

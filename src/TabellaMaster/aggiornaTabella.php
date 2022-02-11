@@ -53,7 +53,7 @@
         $aggiunta -> execute();
     }
     function aggiornaSpedizioneEmail($pdo){
-        $aggiunta = $pdo -> prepare("UPDATE Storico_Candidato SET spedito_utente = ? WHERE id_storico_candidato = (SELECT id_candidato FROM Candidato WHERE codice_fiscale = ?) AND archiviato='No'");
+        $aggiunta = $pdo -> prepare("UPDATE Storico_Candidato SET spedito_utente = ? WHERE id_storico_candidato = (SELECT id_candidato FROM Candidato WHERE codice_fiscale=?) AND archiviato='No'");
         if($_POST['spedito_utente'] === 'true'){
             $aggiunta -> bindValue(1, 'Si');
         }
