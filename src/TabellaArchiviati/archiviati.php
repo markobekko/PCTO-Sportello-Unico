@@ -14,7 +14,7 @@
                 <input type="text" id="cerca" placeholder="Cerca">
                 <button type="button" id="esci" name="esci">Esci</button>
                 <button type="button" id="aggiorna" name="aggiorna">Aggiorna</button>
-                <input type="number" id="numBelluno" name="numBelluno" value="0" disabled>
+                <input type="number" id="numBelluno" name="numBelluno" value="0" readonly="readonly">
                 <input type="number" id="numFeltre" name="numFeltre" value="0" disabled>
             </div>
             <?php include "ricezioneArchiviati.php";?>

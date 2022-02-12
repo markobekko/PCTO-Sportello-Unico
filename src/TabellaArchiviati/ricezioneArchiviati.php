@@ -37,7 +37,7 @@
                     echo "</select>";
                 echo "</td>";
                 echo "<td>";
-                        echo "<select name=\"esito\" id=\"esito\" disabled>";
+                        echo "<select name=\"esito\" id=\"esito\" readonly\"readonly\">";
                         echo "<option hidden selected value> ".  $row["esito_esame"] ." </option>";
                         echo "<option value=\"Superato\">Superato</option>";
                         echo "<option value=\"Non Superato\">Non Superato</option>";
