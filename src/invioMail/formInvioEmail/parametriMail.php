@@ -17,7 +17,13 @@
       window.location.href="pcto_impostazioni.php";
       
     }
-  </script>
+    </script>
+    <button onclick="returnI()">Ritorna alla pagina principale</button>
+    <script>
+        function returnI(){
+          window.location.href="../../index.html";
+        }
+    </script>
   <form action="../email/email.php" method="POST">
     <h1>Parametri generali delle e-mail</h1>
 
@@ -81,7 +87,7 @@
   </table>
 <br>
 
-  <input type="submit" value="SALVA">
+  
 
 </form>
 

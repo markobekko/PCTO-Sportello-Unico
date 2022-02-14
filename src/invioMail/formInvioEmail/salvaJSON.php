@@ -22,5 +22,5 @@
     file_put_contents('../resources/configEmail.json', $json_object);
     
     //reindirizo alla pagina principale
-    header("Location:index.php");
+    header("Location:parametriMail.php");
 ?>
