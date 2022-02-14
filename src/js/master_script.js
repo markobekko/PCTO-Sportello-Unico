@@ -2,7 +2,7 @@
 function cercaParole(){
     $(document).ready(function(){
         // Numero delle colonne da cercare
-        var notFoundCount = -6;
+        var notFoundCount = -7;
         $("#cerca").on("keyup", function() {
         var value = $(this).val().toLowerCase(),
             $tr =  $("#tabella tbody tr");
@@ -30,6 +30,7 @@ function esciSenzaSalvare(){
 }
 // Salva i dati nella tabella nel DB e poi esce
 function esciSalvando(){
+    var i = 0;
     $('#tabella tr').each(function(index) {
         // index diverso da 0 ovvero escludendo il nome delle colonne (Cognome, Nome, Codice Fiscale ecc.)
         if(index != 0){
@@ -38,14 +39,19 @@ function esciSalvando(){
             var nome = $(this).find("#nome").val().trim();
             var codice_fiscale = $(this).find("#codice_fiscale").val().trim();
             var email = $(this).find("#email").val().trim();
-            var data_esame = $(this).find("#esame option:selected").text().trim();
+            var data_esame = $(this).find("#esame" + i++).val();
+            console.log(data_esame)
+            if(data_esame == " - "){
+                data_esame = null;
+            }
             const esame = data_esame.split(" - ");
-            if($(this).find('#check_box').is(':checked'))
+            if($(this).find('#check_box').is(':checked')){
                 var spedito_utente = true;
-            else
+            }
+            else{
                 var spedito_utente = false;
+            }
             var esito_esame = $(this).find('#esito option:selected').text().trim();
-            console.log(esame[0] + " " + esame[1]);
             if (codice_fiscale != null && data_esame != null && spedito_utente != null && esito_esame != null) {
                 // Invia una richiesta POST al file php passandogli come parametri le variabili
                 $.ajax({
@@ -68,8 +74,6 @@ function archiviaPersona(){
             // Prende il valore degli <input> e li salva nella variabile apposita
             var codice_fiscale = $(this).find("#codice_fiscale").val().trim();
             var esito_esame = $(this).find('#esito option:selected').text().trim();
-            console.log(esito_esame);
-            console.log(codice_fiscale);
             if (codice_fiscale != null && esito_esame != null) {
                 // Invia una richiesta POST al file php passandogli come parametri le variabili
                 $.ajax({
@@ -111,10 +115,10 @@ function aggiornaSedi(){
     var intervalId = window.setInterval(function(){
         document.getElementById("numBelluno").value = 0;
         document.getElementById("numFeltre").value = 0;
+        var i = 0;
         $('#tabella tr').each(function(index) {
             if(index != 0){
-                var data_esame = $(this).find("#esame option:selected").text().trim();
-                const esame = data_esame.split(" - ");
+                const esame = $(this).find("#esame" + i++).val().split(" - ");
                 if(esame[1] == "Belluno")
                     document.getElementById("numBelluno").stepUp(1);
                 else
@@ -122,4 +126,14 @@ function aggiornaSedi(){
             }
         });
     }, 500);
+}
+function salvaDataPerTutti(){
+    if(document.getElementById("esameData").value != "-1"){
+        var i = 0;
+        $('table tbody tr').each(function(index) {
+            // index diverso da 0 ovvero escludendo il nome delle colonne (Cognome, Nome, Codice Fiscale ecc.)
+            element = document.getElementById("esame" + i++);
+            element.value = document.getElementById("esameData").value;
+        });
+    }
 }

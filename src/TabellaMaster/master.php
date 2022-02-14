@@ -19,6 +19,8 @@
                 <button type="button" id="aggiorna" name="aggiorna">Aggiorna</button>
                 <input type="number" id="numBelluno" name="numBelluno" value="0" disabled>
                 <input type="number" id="numFeltre" name="numFeltre" value="0" disabled>
+                <?php include "selezioneData.php";?>
+                <button type="button" id="salvaData" name="salvaData">Salva Data</button>
             </div>
             <?php include "ricezioneDati.php";?>
             <script>cercaParole();</script>
@@ -38,6 +40,9 @@
                 document.getElementById('archivia').onclick = function() {
                     archiviaPersona();
                     aggiornaTabella();
+                };
+                document.getElementById('salvaData').onclick = function() {
+                    salvaDataPerTutti();
                 };
             </script>
         </div>
