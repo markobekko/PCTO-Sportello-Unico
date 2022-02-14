@@ -27,7 +27,6 @@ function aggiornaTabella(){
 // Ritorna al menù senza salvare
 function esciSenzaSalvare(){
     table.load("ricezioneDati.php");
-    window.location = "../index.html";
 }
 // Salva i dati nella tabella nel DB e poi esce
 function esciSalvando(){
