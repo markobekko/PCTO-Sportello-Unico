@@ -1,6 +1,4 @@
-<?php
-    include "inserimentoDati.php";
-?>
+<?php include "inserimentoCandidato.php"; ?>
 <!DOCTYPE html>
 <html>
     <head>
