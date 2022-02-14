@@ -4,7 +4,6 @@
     if(empty($_POST['esito_esame'])){
         $_POST['esito_esame'] = null;
     }
-
     aggiornaCognome($pdo);
     aggiornaNome($pdo);
     aggiornaEmail($pdo);
