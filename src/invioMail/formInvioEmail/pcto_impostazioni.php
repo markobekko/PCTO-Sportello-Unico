@@ -55,7 +55,7 @@
 </form>
 
 <!-- bottone con script per il ritorno alla pagina principale-->
-  <button class="ritorna button4" name="ritorna"  onClick="returnP()" >Ritorna alla pagina iniziale</button>
+  <button class="ritorna button4" name="ritorna"  onClick="returnP()" >Ritorna ai parametri</button>
   <script>
     function returnP() {
       window.location.href="parametriMail.php"; 
