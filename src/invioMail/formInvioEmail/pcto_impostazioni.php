@@ -58,7 +58,7 @@
   <button class="ritorna button4" name="ritorna"  onClick="returnP()" >Ritorna alla pagina iniziale</button>
   <script>
     function returnP() {
-      window.location.href="index.php"; 
+      window.location.href="parametriMail.php"; 
     }
   </script>
   <script>
