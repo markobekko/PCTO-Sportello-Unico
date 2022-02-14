@@ -1,10 +1,6 @@
 <?php
     include '../connessione.php';
     $pdo = connessione("localhost","Sportello Unico","root","");
-    echo $_POST['cognome'];
-    echo $_POST['nome'];
-    echo $_POST['codice_fiscale'];
-    echo $_POST['email'];
 	if(isset($_POST['cognome']) && isset($_POST['nome']) && isset($_POST['codice_fiscale']) && isset($_POST['email'])){
         $cognome = $_POST['cognome'];
         $nome =  $_POST['nome'];
