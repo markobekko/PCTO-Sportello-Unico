@@ -7,6 +7,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
         <script src="../js/master_script.js"></script> 
+        <script src="../js/email_script.js"></script>
     </head>
     <body>
         <div class="principale">
@@ -43,6 +44,10 @@
                 };
                 document.getElementById('salvaData').onclick = function() {
                     salvaDataPerTutti();
+                };
+                document.getElementById('spedisci').onclick = function() {
+                    console.log("In spedizione");
+                    invioMail();
                 };
             </script>
         </div>
