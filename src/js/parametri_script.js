@@ -19,7 +19,7 @@ function addCCN() {//nome funzione
 function removeAllOptions(selectbox){
     for(var i = 0; i < selectbox.options.length; i++){
         selectbox.remove(i);
-        break;
+      
     }
 }
 //rimuovi opzione selezionata
