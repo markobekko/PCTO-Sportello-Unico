@@ -16,7 +16,7 @@
     echo "<script type='text/javascript'> document.getElementById('utente').innerHTML ='".$utente."'</script>";
     echo "<script type='text/javascript'> document.getElementById('mittente').innerHTML ='".$mittente."'</script>";
     echo "<script type='text/javascript'> document.getElementById('password').value ='".$password."'</script>";
-  
+
 
 
 ?>

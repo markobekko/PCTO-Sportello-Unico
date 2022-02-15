@@ -5,6 +5,7 @@
         <title>Impostazioni</title>
         <link rel="stylesheet" href="./pcto_impostazioni.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         
 
     <head>
@@ -16,7 +17,7 @@
     <table>
         <tr>
           <td>SMTP:</td>
-          <td><textarea id="smtp" name="smtp" rows="1" cols="80"></textarea></td>
+          <td><textarea id="smtp" name="smtp" rows="1" cols="80" ></textarea></td>
         </tr>
         <tr>
             <td>Mittente:</td>
@@ -55,22 +56,15 @@
 </form>
 
 <!-- bottone con script per il ritorno alla pagina principale-->
-  <button class="ritorna button4" name="ritorna"  onClick="returnP()" >Ritorna ai parametri</button>
-  <script>
-    function returnP() {
-      window.location.href="parametriMail.php"; 
-    }
-  </script>
-  <script>
-    // script per la chiusura della pagina
+  <button class="ritorna button4" name="ritornaB" id="ritornaB" onclick=ritornaN()  >Ritorna ai parametri</button>
 
-    
-    window.onbeforeunload = function() {
-                    var Ans = confirm();
-                    if(Ans==true)return true;
-                    else
-                       return false;
-               };
+  <script>
+    function ritornaN() {
+      alert("Non salvato");
+    window.location.href="./parametriMail.php";
+    }
+
+
   </script>
  
 

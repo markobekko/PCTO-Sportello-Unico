@@ -1,3 +1,15 @@
+html {
+    line-height: 1.15; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+button,
+table,
+html,
+body,
+section {
+    display: block;
+}
 body{
     background: #fafaef;
 }
@@ -7,7 +19,7 @@ textarea {
 table{
     font-size: 16px;
 }
-.ritorna{
+.button {
     border: none;
     color: rgba(12, 12, 12, 0.548);
     padding: 15px 32px;
@@ -19,10 +31,36 @@ table{
     cursor: pointer;
     background-color:#fbfbfb;
 }
-.button4:hover {
+.button2:hover {
     background-color: #51282a;
     color: white;
   }
-.Ritorna{
+.button3:hover {
+    background-color: #51282a;
+    color: white;
+  }
+.bottoni{
+    position : absolute;
+    left : 340px;
+} 
+.impostazioni {
+    border: none;
+    color: rgba(12, 12, 12, 0.548);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color:#fbfbfb;
+}
+.button1:hover {
+    background-color: #51282a;
+    color: white;
+  }
+.impostazioni{
+    position : absolute;
     top: 10px;
+    right : 640px;
 } 

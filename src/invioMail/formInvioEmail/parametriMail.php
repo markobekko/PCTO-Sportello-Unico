@@ -6,19 +6,20 @@
     <link rel="stylesheet" href="pcto_label.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../../js/parametri_script.js"></script>
   </head>
 
 <body id="project">
 
-  <button onclick="impostazioni()">Impostazioni</button>
+  <button  class="impostazioni button1" onclick="impostazioni()">Impostazioni</button>
   <script type="text/javascript">
     function impostazioni(){
       window.location.href="pcto_impostazioni.php";
       
     }
     </script>
-    <button onclick="returnI()">Ritorna alla pagina principale</button>
+    <button class="impostazioni button1" onclick="returnI()">Ritorna alla pagina principale</button>
     <script>
         function returnI(){
           window.location.href="../../index.html";
@@ -66,16 +67,25 @@
       </tr>
  
 
-  <tr>
-    <td>Destinatario CC:</td>
-    <td><textarea id="destinatarioCC" name="destinatarioCC" rows="1" cols="80"></textarea></td>
+      <tr>
+    <td>Destinatario CC</td>
+    <td>  <select style="width:145px;" id = "emailCC" ></select>
+      Inserisci: <input type="text" id = "txtCC" name = "txtCC" size="30px" />
+      <input type="button" id = "btnAdd" value = "Add" onclick = "addCC()" />
+      <input type="button" id = "btnDelete" value = "Delete All" onclick = "removeAllOptions(emailCC)">
+      <input type="button" id = "btnDeleteS" value = "Delete Selected" onclick ="removeOptions(emailCC)">
+     </td>
   </tr>
   <tr>
-  <tr>
+  <tr>  
     <td>Destinatario CCN:</td>
-    <td><textarea id="destinatarioCCN" name="destinatarioCCN" rows="1" cols="80"></textarea></td>
+    <td><select style="width:145px;" id = "emailCCN" ></select>
+      Inserisci: <input type="text" id = "txtCCN" name = "txtCCN" size="30px"/>
+      <input type="button" id = "btnAdd" value = "Add" onclick = "addCCN()" />
+      <input type="button" id = "btnDelete" value = "Delete All" onclick = "removeAllOptions(emailCCN)">
+      <input type="button" id = "btnDeleteS" value = "Delete Selected" onclick ="removeOptions(emailCCN)">
+    </td>
   </tr>
-  <tr>
   <tr>
     <td>Oggetto Email Invito al test:</td>
     <td><textarea id="oggetto" name="oggetto" rows="20" cols="80"></textarea></td>
@@ -89,10 +99,14 @@
 
   
 
-</form>
+</form><br>
+  <element class=bottoni> 
+    <button class="button button2">Salva </button>
+    <button class="button button3">Esci senza salvare</button>
+  </element> 
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6ddde08dbd7c0e26',m:'PoslWiVE8EDY.dEIcc0dqVQy6qsjV9sRSwo3KfiTDvU-1644921198-0-AQVzkXgsspH6o+lEhpDbvW0J84umFHenDjolIedb/9dx6r3RfiKmllhad8F0RMoFIz3jvtE31PKu3I4Z+X9EjaP+cieM0pDDGi8X6n3CyE7zYnz1IEMISShqpJi0jXY/sypSVS49pclU/iwUfy3tqlZR4QWL8JhpgkcRkGmmkvuKtqc+PdFJxUQKXD5Ly4EIco+QxULVgf5v/TWsR0mjnf0=',s:[0x855dd38c62,0x62b4142bb5],}})();</script>
+</body>
 
-
- <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d8346ffde865995',m:'E7kE_UAl188Kx3G4I32Rcb4bqpdxkT5cfKzWxRnAzCE-1643971189-0-AXvZgh0XIxEQxcTZ71cpjySncHJ2c4auEjJLoNl/HDdRz/AJgiSoo5WulqkpAE+nTGL6ZwGGc5MPRFzpZ9G5cUyj4sRggUnklML1egXrof9WHrXBEGRke9sQkOppZMZf0rC+5mt8zWV9yDVYdFFUOd2w4vDoiwXlVYzTwdKjCFPTXF8ot0AJsL3pyKcTKemcGKRedLSGgRne4G+tl8W/obo=',s:[0x0d3286417e,0x3f9b445134],}})();</script></body>
 </html>
 
 <?php require('letturaJSON.php');?>
