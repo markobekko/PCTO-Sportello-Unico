@@ -1,3 +1,5 @@
+ src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+
 function addCC() {//nome funzione
     var ddl = document.getElementById("emailCC");//salva su una variabile l'elemento del dpl
     var option = document.createElement("OPTION");//crea l'elemento option per il dpl
@@ -17,10 +19,7 @@ function addCCN() {//nome funzione
 
 //rimuovi tutte le opzioni
 function removeAllOptions(selectbox){
-    for(var i = 0; i < selectbox.options.length; i++){
-        selectbox.remove(i);
-      
-    }
+    $("#emailCC").empty();
 }
 //rimuovi opzione selezionata
 function removeOptions(selectbox){
