@@ -8,8 +8,10 @@
     aggiornaNome($pdo);
     aggiornaEmail($pdo);
     aggiornaSpedizioneEmail($pdo);
-    aggiornaEsitoEsame($pdo);
-    aggiornaDataEsame($pdo);
+    if(isset($_POST['data_esame']) || isset($_POST['sede_esame'])){
+        aggiornaEsitoEsame($pdo);
+        aggiornaDataEsame($pdo);
+    }
 
     function aggiornaCognome($pdo){
         $aggiunta = $pdo -> prepare("UPDATE Candidato SET cognome = ? WHERE codice_fiscale = ?");

@@ -10,6 +10,7 @@
     <body>
         <div class="container">
             <div class="titolo">Registrazione</div>
+            <button type="button" id="indietro">Indietro</button>
             <form action="#" method="POST">
                 <div class="user-details">
                     <div class="input-box">
@@ -36,7 +37,9 @@
         </div>
         
         <script>
-            //controlloSeChiusura();
+            document.getElementById('indietro').onclick = function() {
+                window.location = "../index.html";
+            };
         </script>
     </body>
 </html>

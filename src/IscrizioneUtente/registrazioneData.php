@@ -10,6 +10,7 @@
         <!-- Form: -->
         <div class="container">
             <div class="titolo">Inserimento nuova data</div>
+            <button type="button" id="indietro">Indietro</button>
             <form action="#" method="POST">
                 <div class="user-details">
                     <div class="input-box">
@@ -31,5 +32,10 @@
                 </div>
             </form>
         </div>
+        <script>
+            document.getElementById('indietro').onclick = function() {
+                window.location = "../index.html";
+            };
+        </script>
     </body>
 </html>

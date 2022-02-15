@@ -24,20 +24,19 @@ function cercaParole(){
 function aggiornaTabella(){
     table.load("ricezioneArchiviati.php");
 }
+// Imposta il numero dei candidati che svolgono l'esame nella sede a Belluno/Feltre
 function aggiornaSedi(){
     var intervalId = window.setInterval(function(){
         document.getElementById("numBelluno").value = 0;
         document.getElementById("numFeltre").value = 0;
+        var i = 0;
         $('#tabella tr').each(function(index) {
             if(index != 0){
-                var data_esame = $(this).find("#esame option:selected").text().trim();
-                const esame = data_esame.split(" - ");
-                if(esame[1] == "Belluno"){
+                const esame = $(this).find("#esame" + i++).val().split(" - ");
+                if(esame[1] == "Belluno")
                     document.getElementById("numBelluno").stepUp(1);
-                }
-                else{
+                else if(esame[1] == "Feltre")
                     document.getElementById("numFeltre").stepUp(1);
-                }
             }
         });
     }, 500);

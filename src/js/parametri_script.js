@@ -15,39 +15,32 @@ function addCCN() {//nome funzione
     document.getElementById("txtCCN").value = "";
 };
 
-//rimuovi  tuttte le opzioni
-function removeAllOptions(selectbox)
-{
-for(var i = 0; i < selectbox.options.length; i++){
-       if(selectbox.options[i].selected){
-           selectbox.remove(i);
-           console.log(i);
-           break;
-       }
-   }
+//rimuovi tutte le opzioni
+function removeAllOptions(selectbox){
+    for(var i = 0; i < selectbox.options.length; i++){
+        selectbox.remove(i);
+        break;
+    }
 }
-//rimuovi  opzione selezionata
-function removeOptions(selectbox)
-{
-
-   for(var i = 0; i < selectbox.options.length; i++){
-       if(selectbox.options[i].selected){
-           selectbox.remove(i);
-           console.log(i);
-           break;
-       }
-   }
+//rimuovi opzione selezionata
+function removeOptions(selectbox){
+    for(var i = 0; i < selectbox.options.length; i++){
+        if(selectbox.options[i].selected){
+            selectbox.remove(i);
+            break;
+        }
+    }
 }
 
 
 
-//tasti per la pulizia del textarea
+// tasti per la pulizia del textarea
 var input1= document.querySelector('#btnAdd');
 var textarea = document.querySelector('#txtText');
 
 input.addEventListener('click', function () {
-textarea.value = '';
+    textarea.value = '';
 }, false);
 input1.addEventListener('click', function () {
-textarea.value = '';
+    textarea.value = '';
 }, false);

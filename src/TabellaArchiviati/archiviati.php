@@ -10,6 +10,7 @@
     </head>
     <body>
         <div class="principale">
+        <button type="button" id="indietro">Indietro</button>
             <div class="superiore">
                 <input type="text" id="cerca" placeholder="Cerca">
                 <button type="button" id="esci" name="esci">Esci</button>
@@ -24,6 +25,9 @@
                 var table = $("#tabella");
                 document.getElementById('aggiorna').onclick = function() {
                     aggiornaTabella();
+                };
+                document.getElementById('indietro').onclick = function() {
+                    window.location = "../index.html";
                 };
             </script>
         </div>

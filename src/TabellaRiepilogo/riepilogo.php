@@ -7,13 +7,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
         <script src="../js/master_script.js"></script> 
-        <script src="../js/email_script.js"></script>
     </head>
     <body>
         <div class="principale">
+        <button type="button" id="indietro">Indietro</button>
             <div class="superiore">
                 <input type="text" id="cerca" placeholder="Cerca">
-                <button type="button" id="esciSalva">Salva ed esci</button>
+                <button type="button" id="salva">Salva</button>
                 <button type="button" id="esciSenzaSalvare">Esci senza salvare</button>
                 <button type="button" id="spedisci">Spedisci invito</button>
                 <button type="button" id="archivia">Archivia Tutto</button>
@@ -35,8 +35,8 @@
                     esciSenzaSalvare();
                     aggiornaTabella();
                 };
-                document.getElementById('esciSalva').onclick = function() {
-                    esciSalvando();
+                document.getElementById('salva').onclick = function() {
+                    salvaDati();
                 };
                 document.getElementById('archivia').onclick = function() {
                     archiviaPersona();
@@ -45,9 +45,8 @@
                 document.getElementById('salvaData').onclick = function() {
                     salvaDataPerTutti();
                 };
-                document.getElementById('spedisci').onclick = function() {
-                    console.log("In spedizione");
-                    invioMail();
+                document.getElementById('indietro').onclick = function() {
+                    window.location = "../index.html";
                 };
             </script>
         </div>

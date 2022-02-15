@@ -27,9 +27,10 @@ function aggiornaTabella(){
 // Ritorna al menù senza salvare
 function esciSenzaSalvare(){
     table.load("ricezioneDati.php");
+    window.location = "../index.html";
 }
 // Salva i dati nella tabella nel DB e poi esce
-function esciSalvando(){
+function salvaDati(){
     var i = 0;
     $('#tabella tr').each(function(index) {
         // index diverso da 0 ovvero escludendo il nome delle colonne (Cognome, Nome, Codice Fiscale ecc.)
@@ -40,11 +41,6 @@ function esciSalvando(){
             var codice_fiscale = $(this).find("#codice_fiscale").val().trim();
             var email = $(this).find("#email").val().trim();
             var data_esame = $(this).find("#esame" + i++).val();
-            console.log(data_esame)
-            if(data_esame == " - "){
-                data_esame = null;
-            }
-            const esame = data_esame.split(" - ");
             if($(this).find('#check_box').is(':checked')){
                 var spedito_utente = true;
             }
@@ -52,12 +48,20 @@ function esciSalvando(){
                 var spedito_utente = false;
             }
             var esito_esame = $(this).find('#esito option:selected').text().trim();
+            if(data_esame == " - "){
+                $richiesta = "cognome=" + cognome + "\u0026nome=" + nome + "\u0026codice_fiscale="+ codice_fiscale + "\u0026email="+ email + "\u0026spedito_utente=" + spedito_utente + "\u0026esito_esame=" + esito_esame;
+            }
+            else{
+                var esame = data_esame.split(" - ");
+                $richiesta = "cognome=" + cognome + "\u0026nome=" + nome + "\u0026codice_fiscale="+ codice_fiscale + "\u0026email="+ email + "\u0026spedito_utente=" + spedito_utente + "\u0026esito_esame=" + esito_esame + "\u0026data_esame=" + esame[0] + "\u0026sede_esame=" + esame[1];
+            }
+            
             if (codice_fiscale != null && data_esame != null && spedito_utente != null && esito_esame != null) {
                 // Invia una richiesta POST al file php passandogli come parametri le variabili
                 $.ajax({
                     type:"POST",
                     url: "aggiornaTabella.php",
-                    data: "cognome=" + cognome + "\u0026nome=" + nome + "\u0026codice_fiscale="+ codice_fiscale + "\u0026email="+ email + "\u0026spedito_utente=" + spedito_utente + "\u0026esito_esame=" + esito_esame + "\u0026data_esame=" + esame[0] + "\u0026sede_esame=" + esame[1],
+                    data: $richiesta,
                     success: function(){
                         console.log("Successo");
                     }
@@ -66,7 +70,7 @@ function esciSalvando(){
         }
     });
 }
-// Archivia la persona se il suo esito è "Superato"
+// Archivia la persona se ha un esito dell'esame
 function archiviaPersona(){
     $('#tabella tr').each(function(index) {
         // index diverso da 0 ovvero escludendo il nome delle colonne (Cognome, Nome, Codice Fiscale ecc.)
@@ -111,6 +115,7 @@ function cancellaPersona(bottone) {
     // Rimuove la persona dalla tabella
     row.parentNode.removeChild(row);
 }
+// Imposta il numero dei candidati che svolgono l'esame nella sede a Belluno/Feltre
 function aggiornaSedi(){
     var intervalId = window.setInterval(function(){
         document.getElementById("numBelluno").value = 0;
@@ -121,17 +126,17 @@ function aggiornaSedi(){
                 const esame = $(this).find("#esame" + i++).val().split(" - ");
                 if(esame[1] == "Belluno")
                     document.getElementById("numBelluno").stepUp(1);
-                else
+                else if(esame[1] == "Feltre")
                     document.getElementById("numFeltre").stepUp(1);
             }
         });
     }, 500);
 }
+// Imposta la data dell'esame per ogni persona dopo aver premuto il pulsante "Salva Data"
 function salvaDataPerTutti(){
     if(document.getElementById("esameData").value != "-1"){
         var i = 0;
         $('table tbody tr').each(function(index) {
-            // index diverso da 0 ovvero escludendo il nome delle colonne (Cognome, Nome, Codice Fiscale ecc.)
             element = document.getElementById("esame" + i++);
             element.value = document.getElementById("esameData").value;
         });
