@@ -59,12 +59,11 @@ foreach($rows as $row){
         $body = "
         <html>
             <body>
-                <h1> Informazioni per il conseguimento dell'esame di italiano</h1>";
+                <h1>Informazioni per il conseguimento dell'esame di italiano</h1>";
         $body .="<h3> Buongiorno ".$row['nome']." ".$row['cognome']."</h3>";
         $body .="<p>Si comunica che il giorno ".$dataG." </p>";
         $body .="</body>";
-        $body .="</html>";        
-     
+        $body .="</html>";     
         
 
         //Impostazioni mail da inviare

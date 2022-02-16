@@ -1,7 +1,7 @@
 <?php
 
  function updateCheck($cf){
-    $pdo= new PDO("mysql:host=127.0.0.1;dbname=sportello unico",'root','');
+    require("./conn.php");
 
     
    
