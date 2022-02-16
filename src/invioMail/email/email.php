@@ -84,8 +84,8 @@ foreach($rows as $row){
        
         $a = $mail->send();
         updateCheck($row['codice_fiscale']);
-        if ($a == true) {
-            echo "<script>console.log(".$row['email'].", Inviata);</script>";
+        if ($a) {
+            echo "<script type='text/javascript'>console.log('".$row['email'].", Inviata');</script>";
             //header("location:../../TabellaMaster/master.php");
             
         } else {
@@ -97,7 +97,7 @@ foreach($rows as $row){
 
 
     }
-
+    
 
 ?>
 

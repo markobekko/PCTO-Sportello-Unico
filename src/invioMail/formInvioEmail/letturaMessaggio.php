@@ -33,6 +33,8 @@ function letturaBody(){
 }
 echo "<script type='text/javascript'> document.getElementById('corpo').innerHTML='".$body."';</script>";
 }
+
+//funzione per la lettura del file json e l'invio con i relativi nomi e data
 function invioBody($nome,$data){
 
 
@@ -57,7 +59,7 @@ function invioBody($nome,$data){
                 $body.="<p>".$value." <b>".$data."</b></p>"; 
             }
             else{
-        if(is_array($value)){
+        if(is_array($value)){//qui c'è una lista puntata
             $body.="<ul>";
             foreach($value as $key => $value2){
                 $body.="<li>".$value2."</li>";                
