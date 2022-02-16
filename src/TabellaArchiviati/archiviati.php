@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="principale">
-        <button type="button" id="indietro">Indietro</button>
+            <button type="button" id="indietro">Indietro</button>
             <div class="superiore">
                 <input type="text" id="cerca" placeholder="Cerca">
                 <button type="button" id="esci" name="esci">Esci</button>
@@ -18,11 +18,27 @@
                 <input type="number" id="numBelluno" name="numBelluno" value="0" disabled>
                 <input type="number" id="numFeltre" name="numFeltre" value="0" disabled>
             </div>
-            <?php include "ricezioneArchiviati.php";?>
+            <div id="table">
+                <table class="sortable" id="tabella">
+                    <thead>
+                        <tr>
+                            <th>Cognome</th>
+                            <th>Nome</th>
+                            <th>Codice fiscale</th>
+                            <th>Mail</th>
+                            <th>Data e Sede</th>
+                            <th>Esito Esame</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datiTabella">
+                        <?php include "ricezioneArchiviati.php";?>
+                    </tbody>
+                </table>
+            </div>
             <script>cercaParole();</script>
             <script>aggiornaSedi();</script>
             <script>
-                var table = $("#tabella");
+                var table = $("#datiTabella");
                 document.getElementById('aggiorna').onclick = function() {
                     aggiornaTabella();
                 };
