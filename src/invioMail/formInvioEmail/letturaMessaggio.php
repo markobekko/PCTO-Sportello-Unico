@@ -41,31 +41,35 @@ function invioBody($nome,$data){
 
     //decodifico il json di configurazione in un oggetto
     $dati= json_decode($string,true);
-
-
-    echo "<script type='text/javascript'> document.getElementById('oggetto').innerHTML='".$dati['oggetto']."'</script>";
-    echo "<br><br><br><br><br><br>";
     $body="<html>";
     $body.="<body>";
     $body.="<h1>".$dati['intestazione']."</h1>";
 
     foreach($dati as $key => $value){
+
+        //salto l'oggetto e l'intestazione perchè già letti in mail.php
         if($key!='oggetto' && $key!='intestazione'){
+            //primo corpo per il buongiorno con il relativo nome e cognome\
             if($key=='corpo1'){
-                $value+=" ".$nome;
+                $body.="<p>".$value." <b>".$nome."</b></p>"; 
+                //secondo corpo per la data dell'esame
+            }else if($key=='corpo2'){
+                $body.="<p>".$value." <b>".$data."</b></p>"; 
             }
+            else{
         if(is_array($value)){
+            $body.="<ul>";
             foreach($value as $key => $value2){
-                echo $value2;
-                echo "<br>";
+                $body.="<li>".$value2."</li>";                
             }
-            echo "<br>";
+            $body.="</ul>";  
+           
         }else{
-                echo $value;
-                echo "<br>";
+            $body.="<p>".$value."</p>";
                 }
-        }
-    }    
+        }}
+    }  
+    $body.="</body></html>";
     return $body;
 } 
            
