@@ -2,6 +2,7 @@
 
 require('conn.php');
 include('updateInviato.php');
+include('../formInvioEmail/letturaMessaggio.php');
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -56,15 +57,15 @@ foreach($rows as $row){
         //intestazione email
         $subject="Convocazione TEST LINGUA ITALIANA per il rilascio PDS lungo periodo CE";
         //corpo del messaggio
-        $body = "
-        <html>
-            <body>
-                <h1>Informazioni per il conseguimento dell'esame di italiano</h1>";
-        $body .="<h3> Buongiorno ".$row['nome']." ".$row['cognome']."</h3>";
-        $body .="<p>Si comunica che il giorno ".$dataG." </p>";
-        $body .="</body>";
-        $body .="</html>";     
-        
+        // $body = "
+        // <html>
+        //     <body>
+        //         <h1>Informazioni per il conseguimento dell'esame di italiano</h1>";
+        // $body .="<h3> Buongiorno ".$row['nome']." ".$row['cognome']."</h3>";
+        // $body .="<p>Si comunica che il giorno ".$dataG." </p>";
+        // $body .="</body>";
+        // $body .="</html>";     
+        $body=invioBody($row['nome']." ".$row['cognome'],$dataG);
 
         //Impostazioni mail da inviare
          // specifico i gradi di priorità

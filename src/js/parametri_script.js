@@ -30,16 +30,3 @@ function removeOptions(selectbox){
         }
     }
 }
-
-
-
-// tasti per la pulizia del textarea
-var input1= document.querySelector('#btnAdd');
-var textarea = document.querySelector('#txtText');
-
-input.addEventListener('click', function () {
-    textarea.value = '';
-}, false);
-input1.addEventListener('click', function () {
-    textarea.value = '';
-}, false);
