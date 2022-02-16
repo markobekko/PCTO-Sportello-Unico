@@ -5,22 +5,6 @@
     $risultatoCandidato = $conn -> query($candidato);
     
     if($risultatoCandidato -> num_rows > 0){
-        echo "
-        <div class=\"\" id=\"table\">
-            <table class=\"sortable\" id=\"tabella\">
-                <thead>
-                    <tr>
-                        <th>Cognome</th>
-                        <th>Nome</th>
-                        <th>Codice fiscale</th>
-                        <th>Mail</th>
-                        <th>Data e Sede</th>
-                        <th>Invito Spedito</th>
-                        <th>Esito Esame</th>
-                    </tr>
-                </thead>
-                <tbody>
-        ";
         $idEsame = 0;
         while($row=$risultatoCandidato -> fetch_assoc()){
             if($row["archiviato"] == "No"){
@@ -55,8 +39,5 @@
     }else{
         echo "Nessun Risultato";
     }
-    echo "</tbody>";
-    echo "</table>";
-    echo "</div>";
     $conn -> close();
 ?>

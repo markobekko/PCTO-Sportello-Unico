@@ -22,7 +22,7 @@ function cercaParole(){
 }
 // Aggiorna la tabella
 function aggiornaTabella(){
-    table.load("ricezioneDati.php");
+    table.load('ricezioneDati.php');
 }
 // Ritorna al menù senza salvare
 function esciSenzaSalvare(){
@@ -99,7 +99,6 @@ function cancellaPersona(bottone) {
         // Se l'indice della riga è uguale all'indice del bottone premuto
         if(index === (row.rowIndex - 1)){
             var codice_fiscale = $(this).find("#codice_fiscale").val().trim();
-            console.log(codice_fiscale);
             if (codice_fiscale != null) {
                 $.ajax({
                     type:"POST",
@@ -118,17 +117,16 @@ function cancellaPersona(bottone) {
 // Imposta il numero dei candidati che svolgono l'esame nella sede a Belluno/Feltre
 function aggiornaSedi(){
     var intervalId = window.setInterval(function(){
+        // Inizializza a zero i due valori
         document.getElementById("numBelluno").value = 0;
         document.getElementById("numFeltre").value = 0;
         var i = 0;
-        $('#tabella tr').each(function(index) {
-            if(index != 0){
-                const esame = $(this).find("#esame" + i++).val().split(" - ");
-                if(esame[1] == "Belluno")
-                    document.getElementById("numBelluno").stepUp(1);
-                else if(esame[1] == "Feltre")
-                    document.getElementById("numFeltre").stepUp(1);
-            }
+        $('table tbody tr').each(function(index) {
+            var esame = $('#tabella').find("#esame" + i++).val().split(" - ");
+            if(esame[1] == "Belluno" && $('#tabella').is(':visible'))
+                document.getElementById("numBelluno").stepUp(1);
+            else if(esame[1] == "Feltre" && $('#tabella').is(':visible'))
+                document.getElementById("numFeltre").stepUp(1);
         });
     }, 500);
 }
