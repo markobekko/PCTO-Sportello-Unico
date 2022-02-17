@@ -94,7 +94,7 @@
   </tr>
   <tr>
     <td>Corpo Email Invito al test:</td>
-    <td><textarea id="corpo" name="corpo" rows="20" cols="80" readonly="readonly"></textarea></td> 
+    <td><textarea id="corpo" name="corpo" rows="20" cols="80" readonly="readonly"></textarea></td>
   </tr>
   </table>
 <br>
