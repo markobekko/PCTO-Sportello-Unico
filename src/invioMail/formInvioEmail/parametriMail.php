@@ -88,11 +88,11 @@
   </tr>
   <tr>
     <td>Oggetto Email Invito al test:</td>
-    <td><textarea id="oggetto" name="oggetto" rows="1" cols="80"></textarea></td>
+    <td><textarea id="oggetto" name="oggetto" rows="1" cols="80" readonly="readonly"></textarea></td>
   </tr>
   <tr>
     <td>Corpo Email Invito al test:</td>
-    <td><textarea id="corpo" name="corpo" rows="20" cols="80"></textarea></td>
+    <td><textarea id="corpo" name="corpo" rows="20" cols="80" readonly="readonly"></textarea></td>
   </tr>
   </table>
 <br>
@@ -109,4 +109,4 @@
 
 </html>
 
-<?php require('letturaJSON.php'); require('letturaMessaggio.php')?>
+<?php require('letturaJSON.php'); include('letturaMessaggio.php'); letturaBody()?>

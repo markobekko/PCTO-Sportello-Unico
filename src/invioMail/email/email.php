@@ -49,8 +49,9 @@ foreach($rows as $row){
          AND id_storico_esame = id_esame AND archiviato='No'");
          $p->bindValue(1,$row['codice_fiscale']);
         $p->execute();
-        $cf=$p->fetch();
-        $dataF=$cf[1];
+        $datiE=$p->fetch();
+        $sede=$datiE[0];
+        $dataF=$datiE[1];
         //cambio il formato del giorno
         $dataG=date("d-m-Y",strtotime($dataF));
 
@@ -65,7 +66,8 @@ foreach($rows as $row){
         // $body .="<p>Si comunica che il giorno ".$dataG." </p>";
         // $body .="</body>";
         // $body .="</html>";     
-        $body=invioBody($row['nome']." ".$row['cognome'],$dataG);
+        $body=invioBody($row['nome']." ".$row['cognome'],$dataG,$sede);
+      
 
         //Impostazioni mail da inviare
          // specifico i gradi di priorità
