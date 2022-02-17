@@ -56,17 +56,16 @@
 </form>
 
 <!-- bottone con script per il ritorno alla pagina principale-->
-  <button class="ritorna button4" name="ritornaB" id="ritornaB" onclick=ritornaN()  >Ritorna ai parametri</button>
+<button class="ritornaB" name="ritornaB" id="ritornaB" onclick=ritornaN()  >Ritorna ai parametri</button>
 
-  <script>
-    function ritornaN() {
-      alert("Non salvato");
-    window.location.href="./parametriMail.php";
-    }
+<script>
+  function ritornaN() {
+    alert("Non salvato");
+  window.location.href="./parametriMail.php";
+  }
 
 
-  </script>
- 
+</script>
 
 </body>
 </html>  
