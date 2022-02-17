@@ -27,7 +27,7 @@
   <button  class="impostazioni" onclick="impostazioni()">Impostazioni</button>
     <button class="impostazioni" onclick="returnI()">Ritorna alla pagina principale</button>
       </div><br>
-  <form action="../email/email.php" method="POST">
+  <form action="../../index.html">
     
 
     <table width="960" height="416" border="0" cellpadding="0" cellspacing="0" >
@@ -98,10 +98,6 @@
 <br>
 
 </form><br>
-  <element class=bottoni> 
-    <button class="button button2">Salva </button>
-    <button class="button button3">Esci senza salvare</button>
-  </element> 
 <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6ddde08dbd7c0e26',m:'PoslWiVE8EDY.dEIcc0dqVQy6qsjV9sRSwo3KfiTDvU-1644921198-0-AQVzkXgsspH6o+lEhpDbvW0J84umFHenDjolIedb/9dx6r3RfiKmllhad8F0RMoFIz3jvtE31PKu3I4Z+X9EjaP+cieM0pDDGi8X6n3CyE7zYnz1IEMISShqpJi0jXY/sypSVS49pclU/iwUfy3tqlZR4QWL8JhpgkcRkGmmkvuKtqc+PdFJxUQKXD5Ly4EIco+QxULVgf5v/TWsR0mjnf0=',s:[0x855dd38c62,0x62b4142bb5],}})();</script>
 </body>
 
