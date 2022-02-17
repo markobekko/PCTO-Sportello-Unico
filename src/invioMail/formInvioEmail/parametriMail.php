@@ -12,21 +12,23 @@
 
 <body id="project">
 
-  <button  class="impostazioni button1" onclick="impostazioni()">Impostazioni</button>
   <script type="text/javascript">
     function impostazioni(){
       window.location.href="pcto_impostazioni.php";
       
     }
-    </script>
-    <button class="impostazioni button1" onclick="returnI()">Ritorna alla pagina principale</button>
-    <script>
-        function returnI(){
+    function returnI(){
           window.location.href="../../index.html";
         }
     </script>
-  <form action="../email/email.php" method="POST">
+
+<div class="allineamento">
     <h1>Parametri generali delle e-mail</h1>
+  <button  class="impostazioni" onclick="impostazioni()">Impostazioni</button>
+    <button class="impostazioni" onclick="returnI()">Ritorna alla pagina principale</button>
+      </div><br>
+  <form action="../email/email.php" method="POST">
+    
 
     <table width="960" height="416" border="0" cellpadding="0" cellspacing="0" >
       <tr>
