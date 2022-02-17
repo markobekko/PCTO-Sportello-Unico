@@ -86,16 +86,16 @@ foreach($rows as $row){
        
         $a = $mail->send();
         updateCheck($row['codice_fiscale']);
-        if ($a) {
-            echo "<script type='text/javascript'>console.log('".$row['email'].", Inviata');</script>";
-            //header("location:../../TabellaMaster/master.php");
+        // if ($a) {
+        //     echo "<script type='text/javascript'>console.log('".$row['email'].", Inviata');</script>";
+        //     //header("location:../../TabellaMaster/master.php");
             
-        } else {
+        // } else {
             
            
-            echo "<script> alert($mail->ErrorInfo)<script>";
-            //header("location:../formInvioEmail/index.php");
-        }
+        //     echo "<script> alert($mail->ErrorInfo)<script>";
+        //     //header("location:../formInvioEmail/index.php");
+        // }
 
 
     }

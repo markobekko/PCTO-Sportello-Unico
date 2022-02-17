@@ -4,7 +4,7 @@ function letturaBody(){
 
 
     //prento il file json di configurazione
-    $string=file_get_contents("../resources/message.json");
+    $string=file_get_contents("../resources/messageBL.json");
 
     //decodifico il json di configurazione in un oggetto
     $dati= json_decode($string,true);

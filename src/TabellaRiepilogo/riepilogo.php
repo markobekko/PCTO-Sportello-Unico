@@ -72,6 +72,7 @@
                 };
                 document.getElementById('spedisci').onclick = function() {
                    invioMail();
+                   
                 };
             </script>
         </div>
