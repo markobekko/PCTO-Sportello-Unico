@@ -43,7 +43,7 @@
           <td>Password:</td>
         <td>
             <p>
-              <input type="password" name="password" id="password" size="82" readonly="readonly">
+              <input type="password" name="password" id="password" size="97" readonly="readonly">
               <i class="bi bi-eye-slash" id="togglePassword"></i>
           </p>
         </td>
@@ -67,8 +67,6 @@
         <td>Mittente:</td>
         <td><textarea id="mittente" name="mittente" rows="1" cols="80" readonly="readonly"></textarea></td>
       </tr>
- 
-
       <tr>
     <td>Destinatario CC</td>
     <td>  <select style="width:145px;" id = "emailCC" ></select>
@@ -98,8 +96,6 @@
   </tr>
   </table>
 <br>
-
-  
 
 </form><br>
   <element class=bottoni> 

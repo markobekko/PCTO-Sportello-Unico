@@ -12,9 +12,9 @@
         <title>Impostazioni</title>
     </head>
 <body>
-  <div>
+ 
   <!-- reindirizzo al salvataggio dei parametri-->
-  <form action="./salvaJSON.php" method="post" >
+  <form action=>
     <table>
         <tr>
           <td>SMTP:</td>
@@ -32,7 +32,7 @@
           <td>Password:</td>
           <td>
             <p>
-              <input type="password" name="password" id="password" size="93">
+              <input type="password" name="password" id="password" size="97">
               <i class="bi bi-eye-slash" id="togglePassword"></i>
           </p>
           </td>
@@ -53,13 +53,13 @@
 
       </script> 
       </table>
-      <button class="impostazioni button1" name="salva" id="salva">Salva</button>
+      <button class="impostazioni button1" name="salva" id="salva" formmethod="post" formaction="./salvaJSON.php" >Salva</button>
+      <button class="button button1" name="ritornaB" id="ritornaB" onclick=ritornaN() >Ritorna ai parametri</button>
     </form>
 
 <!-- bottone con script per il ritorno alla pagina principale-->
-<button class="button button1" name="ritornaB" id="ritornaB" onclick=ritornaN()  >Ritorna ai parametri</button>
 
-</div>
+
 <script>
   function ritornaN() {
     alert("Non salvato");
