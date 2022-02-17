@@ -12,6 +12,7 @@
         <title>Impostazioni</title>
     </head>
 <body>
+  <div>
   <!-- reindirizzo al salvataggio dei parametri-->
   <form action="./salvaJSON.php" method="post" >
     <table>
@@ -52,12 +53,13 @@
 
       </script> 
       </table>
-      <button class="ritorna button4" name="salva" id="salva">Salva</button>
-</form>
+      <button class="impostazioni button1" name="salva" id="salva">Salva</button>
+    </form>
 
 <!-- bottone con script per il ritorno alla pagina principale-->
-<button class="ritornaB" name="ritornaB" id="ritornaB" onclick=ritornaN()  >Ritorna ai parametri</button>
+<button class="button button1" name="ritornaB" id="ritornaB" onclick=ritornaN()  >Ritorna ai parametri</button>
 
+</div>
 <script>
   function ritornaN() {
     alert("Non salvato");
