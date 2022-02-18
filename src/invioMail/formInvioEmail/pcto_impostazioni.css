@@ -1,9 +1,8 @@
 html {
-    line-height: 1.15; /* 1 */
-    -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+    line-height: 1.15; 
+    -ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%; 
 }
-button,
 table, 
 html,
 body,
@@ -19,33 +18,27 @@ textarea {
 table{
     font-size: 16px;
 }
-.button {
+.buttonsalva {
     border: none;
     color: rgba(12, 12, 12, 0.548);
+    position: relative;
     padding: 1% 3%;
     text-align: center;
     font-size: 106%;
     margin: 2% 2%;
-    margin-top: 8%;
-    left: 15%;
+    margin-top: 4%;
+    left: 18%;
     position: relative;
     text-align: center;
     display: inline-block;
     cursor: pointer;
     background-color:#fbfbfb;
 }
-.button2:hover {
+.buttonsalva:hover {
     background-color: #51282a;
     color: white;
   }
-.button3:hover {
-    background-color: #51282a;
-    color: white;
-  }
-.bottoni{
-    left : 340px;
-} 
-.impostazioni {
+.buttonritorna {
     border: none;
     color: rgba(12, 12, 12, 0.548);
     padding: 1% 3%;
@@ -53,15 +46,13 @@ table{
     text-decoration: none;
     display: inline-block;
     font-size: 106%;
-    margin: 2% 2%;
+    margin: 2% 30%;
+    margin-top: 4%;
+    margin-left: 20%;
     cursor: pointer;
-    background-color:#fbfbfb;
+    background-color: #fbfbfb;
 }
-.button1:hover {
+.buttonritorna:hover {
     background-color: #51282a;
     color: white;
   }
-.impostazioni{
-    top: 10px;
-    right : 640px;
-} 

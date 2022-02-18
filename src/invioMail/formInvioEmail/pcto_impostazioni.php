@@ -53,8 +53,8 @@
 
       </script> 
       </table>
-      <button class="impostazioni button1" name="salva" id="salva" formmethod="post" formaction="./salvaJSON.php" >Salva</button>
-      <button class="button button1" name="ritornaB" id="ritornaB" formaction="./parametriMail.php" >Ritorna ai parametri</button>
+      <button class="buttonsalva" name="salva" id="salva" formmethod="post" formaction="./salvaJSON.php" >Salva</button>
+      <button class="buttonritorna" name="ritornaB" id="ritornaB" formaction="./parametriMail.php" >Ritorna ai parametri</button>
     </form>
 
 </body>
