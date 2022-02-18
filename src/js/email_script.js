@@ -4,13 +4,14 @@ function invioMail(){
     $.ajax({
         type:"POST",
         url: "../invioMail/email/email.php",
-        
         success: function(){//email inviate con successo
             console.log("Inviato");
+            alert("Inviato");
             aggiornaTabella();
         },
         unsuccessful: function(){//email non inviate
             console.log("Non inviato");
+            alert("Non inviato");
             aggiornaTabella();
         },
     });

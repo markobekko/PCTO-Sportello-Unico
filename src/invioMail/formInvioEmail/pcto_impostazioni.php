@@ -14,7 +14,7 @@
 <body>
  
   <!-- reindirizzo al salvataggio dei parametri-->
-  <form action=>
+  <form action="./salvaJSON.php" method="post">
     <table>
         <tr>
           <td>SMTP:</td>
@@ -53,11 +53,18 @@
 
       </script> 
       </table>
-      <button class="buttonsalva" name="salva" id="salva" formmethod="post" formaction="./salvaJSON.php" >Salva</button>
-      <button class="buttonritorna" name="ritornaB" id="ritornaB" formaction="./parametriMail.php" >Ritorna ai parametri</button>
+      <input type="submit" class="impostazioni button1" name="salva" id="salva" value="Salva">
     </form>
-
+    <button class="button button1" name="ritornaB" id="ritornaB" onclick=ritornaP() >Ritorna ai parametri</button>
+          <script type="text/javascript">
+            function ritornaP(){
+            window.location.href="./parametriMail.php";
+            }
+          </script>
 </body>
 </html>  
 
-<?php require('./letturaJSON.php');?>
+<?php
+ require('./letturaJSON.php');
+
+?>

@@ -14,6 +14,7 @@
 
   <script type="text/javascript">
     function impostazioni(){
+
       window.location.href="pcto_impostazioni.php";
       
     }
@@ -27,7 +28,7 @@
   <button  class="impostazioni" onclick="impostazioni()">Impostazioni</button>
     <button class="impostazioni" onclick="returnI()">Ritorna alla pagina principale</button>
       </div><br>
-  <form action="../../index.html">
+  <form method="post" action="../../TabellaRiepilogo/riepilogo.php">
     
 
     <table width="960" height="416" border="0" cellpadding="0" cellspacing="0" >
@@ -69,27 +70,11 @@
       </tr>
  
 
-      <tr>
-    <td>Destinatario CC</td>
-    <td>  <select style="width:145px;" id = "emailCC" ></select>
-      Inserisci: <input type="text" id = "txtCC" name = "txtCC" size="30px" />
-      <input type="button" id = "btnAdd" value = "Add" onclick = "addCC()" />
-      <input type="button" id = "btnDelete" value = "Delete All" onclick = "removeAllOptions(emailCC)">
-      <input type="button" id = "btnDeleteS" value = "Delete Selected" onclick ="removeOptions(emailCC)">
-     </td>
-  </tr>
+
+ 
+
   <tr>
-  <tr>  
-    <td>Destinatario CCN:</td>
-    <td><select style="width:145px;" id = "emailCCN" ></select>
-      Inserisci: <input type="text" id = "txtCCN" name = "txtCCN" size="30px"/>
-      <input type="button" id = "btnAdd" value = "Add" onclick = "addCCN()" />
-      <input type="button" id = "btnDelete" value = "Delete All" onclick = "removeAllOptions(emailCCN)">
-      <input type="button" id = "btnDeleteS" value = "Delete Selected" onclick ="removeOptions(emailCCN)">
-    </td>
-  </tr>
-  <tr> 
-    <td>Oggetto Email Invito al test:</td>
+     <td>Oggetto Email Invito al test:</td>
     <td><textarea id="oggetto" name="oggetto" rows="1" cols="80" readonly="readonly"></textarea></td>
   </tr>
   <tr>
@@ -101,12 +86,13 @@
 
   
   
-  <button class="button button2" formmethod="post">Salva </button>     
-  <button class="button button3" formaction="../../index.html">Esci senza salvare</button>
+  <input type="submit" class="button button2"  name="salva" id="salva" value="Salva">     
 </form><br>
+<button class="button button3" formaction="../../index.html"name="Nsalva" id="Nsalva">Esci senza salvare</button>
 <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6ddde08dbd7c0e26',m:'PoslWiVE8EDY.dEIcc0dqVQy6qsjV9sRSwo3KfiTDvU-1644921198-0-AQVzkXgsspH6o+lEhpDbvW0J84umFHenDjolIedb/9dx6r3RfiKmllhad8F0RMoFIz3jvtE31PKu3I4Z+X9EjaP+cieM0pDDGi8X6n3CyE7zYnz1IEMISShqpJi0jXY/sypSVS49pclU/iwUfy3tqlZR4QWL8JhpgkcRkGmmkvuKtqc+PdFJxUQKXD5Ly4EIco+QxULVgf5v/TWsR0mjnf0=',s:[0x855dd38c62,0x62b4142bb5],}})();</script>
+
 </body>
 
 </html>
 
-<?php require('letturaJSON.php'); include('letturaMessaggio.php'); letturaBody()?>
+<?php require('letturaJSON.php'); include('letturaMessaggio.php'); letturaBody();?>

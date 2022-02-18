@@ -46,7 +46,9 @@ function invioBody($nome,$data,$sede){
     $dati= json_decode($string,true);
     $body="<html>";
     $body.="<body>";
+    $body.="<meta charset='UTF-8'>";
     $body.="<h1>".$dati['intestazione']."</h1>";
+
    
 
     foreach($dati as $key => $value){
