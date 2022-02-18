@@ -16,17 +16,22 @@ require_once "../PHPMailer/Exception.php";
     $query = "SELECT nome,cognome,email,codice_fiscale FROM candidato ";
     $q = $pdo->query($query);
     $rows=$q->fetchAll(PDO::FETCH_ASSOC);
+
     //prento il file json di configurazione
     $string=file_get_contents("../resources/configEmail.json");
-
     //decodifico il json di configurazione in un oggetto
     $dati= json_decode($string,true); 
-
     //salvo i dati su delle variabili
     $smtp=$dati['smtp'];
     $utente=$dati['utente'];
     $myEmail=$dati['mittente'];
     $myPassword=$dati['password'];
+
+    //prento il file json di configurazione
+    $string=file_get_contents("../resources/messageBL.json");
+     //decodifico il json di configurazione in un oggetto
+    $oggetto= json_decode($string,true); 
+    $subject=$oggetto['oggetto'];
 
 foreach($rows as $row){
     
@@ -56,16 +61,8 @@ foreach($rows as $row){
         $dataG=date("d-m-Y",strtotime($dataF));
 
         //intestazione email
-        $subject="Convocazione TEST LINGUA ITALIANA per il rilascio PDS lungo periodo CE";
-        //corpo del messaggio
-        // $body = "
-        // <html>
-        //     <body>
-        //         <h1>Informazioni per il conseguimento dell'esame di italiano</h1>";
-        // $body .="<h3> Buongiorno ".$row['nome']." ".$row['cognome']."</h3>";
-        // $body .="<p>Si comunica che il giorno ".$dataG." </p>";
-        // $body .="</body>";
-        // $body .="</html>";     
+        //$subject="Convocazione TEST LINGUA ITALIANA per il rilascio PDS lungo periodo CE";
+        
         $body=invioBody($row['nome']." ".$row['cognome'],$dataG,$sede);
       
 
@@ -79,25 +76,12 @@ foreach($rows as $row){
         $mail->isHTML(true);
         $mail->setFrom($myEmail, $utente);//nome e mail del mittente
         $mail->addAddress($row['email']); //email destinatario 
-        //$mail->addAddress("dalpontandrea03@gmail.com"); //email destinatario 
-         $mail->Subject = ("$subject");//intestazione della mail
+        $mail->Subject = ("$subject");//intestazione della mail
         $mail->Body = $body;//corpo della mail
         //se la mail viene spedita uscirà con esito positivo
        
         $a = $mail->send();
         updateCheck($row['codice_fiscale']);
-        // if ($a) {
-        //     echo "<script type='text/javascript'>console.log('".$row['email'].", Inviata');</script>";
-        //     //header("location:../../TabellaMaster/master.php");
-            
-        // } else {
-            
-           
-        //     echo "<script> alert($mail->ErrorInfo)<script>";
-        //     //header("location:../formInvioEmail/index.php");
-        // }
-
-
     }
     
 
