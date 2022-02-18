@@ -6,19 +6,28 @@
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
         <script src='https://www.kryogenix.org/code/browser/sorttable/sorttable.js'></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <script src='../js/master_script.js'></script>
         <script src='../js/email_script.js'></script>
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
         <div class='principale'>
+            <div class="wrap">
+                <div class="search">
+                    <input type='text' id='cerca' placeholder='Cerca'>
+                </div>
+            </div>
             <button type='button' id='indietro'>Indietro</button>
             <div class='superiore'>
-                <input type='text' id='cerca' placeholder='Cerca'>
                 <button type='button' id='salva'>Salva</button>
                 <button type='button' id='esciSenzaSalvare'>Esci senza salvare</button>
                 <button type='button' id='spedisci'>Spedisci invito</button>
                 <button type='button' id='archivia'>Archivia Tutto</button>
                 <button type='button' id='aggiorna' name='aggiorna'>Aggiorna</button>
+                <label id="riepilogo">Riepilogo candidati</label>
+                <label id="labelBelluno">Belluno</label>
+                <label id="labelFeltre">Feltre</label>
                 <input type='number' id='numBelluno' name='numBelluno' value='0' disabled>
                 <input type='number' id='numFeltre' name='numFeltre' value='0' disabled>
                 <select name='esameData' id='esameData'>

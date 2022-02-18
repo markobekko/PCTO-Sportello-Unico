@@ -9,21 +9,21 @@
         while($row=$risultatoCandidato -> fetch_assoc()){
             if($row["archiviato"] == "No"){
                 if($row["spedito_utente"] == "Si"){
-                    $valoreSpedizione = "<input name='check_box' id='check_box' type='checkbox' id='spedito_utente' checked='true'>";
+                    $valoreSpedizione = "<input data-label='spedizione invito' name='check_box' id='check_box' type='checkbox' id='spedito_utente' checked='true'>";
                 }
                 else{
-                    $valoreSpedizione = "<input name='check_box' id='check_box' type='checkbox' id='spedito_utente'>";
+                    $valoreSpedizione = "<input data-label='spedizione invito' name='check_box' id='check_box' type='checkbox' id='spedito_utente'>";
                 }
                 $risultatoEsame = $conn -> query("SELECT id_esame, data_esame, sede_esame FROM Sessione_Esame");
                 echo "<tr>";
-                    echo "<td>". "<input name='cognome' id='cognome' type='text' value='". $row["cognome"] ."'>"."</td>";
-                    echo "<td>". "<input name='nome' id='nome' type='text' value='". $row["nome"] ."'>" ."</td>";
-                    echo "<td>". "<input name='codice_fiscale' id='codice_fiscale' type='text' readonly='readonly' value='". $row["codice_fiscale"] ."'>" ."</td>";
-                    echo "<td>". "<input name='email' id='email' type='email' value='". $row["email"] ."'>" ."</td>";
-                    echo "<td>". "<input name='esame' id='esame". $idEsame++ . "'" ."type='text' value='". $row["data_esame"] . " - " . $row["sede_esame"] ."' disabled>" ."</td>";
+                    echo "<td>". "<input scope='row' data-label='cognome' name='cognome' id='cognome' type='text' value='". $row["cognome"] ."'>"."</td>";
+                    echo "<td>". "<input data-label='nome' name='nome' id='nome' type='text' value='". $row["nome"] ."'>" ."</td>";
+                    echo "<td>". "<input data-label='codice fiscale' name='codice_fiscale' id='codice_fiscale' type='text' readonly='readonly' value='". $row["codice_fiscale"] ."'>" ."</td>";
+                    echo "<td>". "<input data-label='email' name='email' id='email' type='email' value='". $row["email"] ."'>" ."</td>";
+                    echo "<td>". "<input data-label='data esame' name='esame' id='esame". $idEsame++ . "'" ."type='text' value='". $row["data_esame"] . " - " . $row["sede_esame"] ."' disabled>" ."</td>";
                     echo "<td>". $valoreSpedizione ."</td>";
                     echo "<td>";
-                            echo "<select name='esito' id='esito'>";
+                            echo "<select data-label='esito esame' name='esito' id='esito'>";
                             echo "<option hidden selected value> ". $row["esito_esame"] ." </option>";
                             echo "<option value='Superato'>Superato</option>";
                             echo "<option value='Non Superato'>Non Superato</option>";
