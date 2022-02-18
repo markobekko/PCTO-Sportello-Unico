@@ -1,26 +1,26 @@
 <?php
     include '../connessione.php';
     $pdo = connessione("localhost","Sportello Unico","root","");
-	if(isset($_POST['cognome']) && isset($_POST['nome']) && isset($_POST['codice_fiscale']) && isset($_POST['email'])){
+	if(isset($_POST['cognome']) && isset($_POST['nome']) && isset($_POST['codice_fiscale']) && isset($_POST['email']) && isset($_POST['registrazioneNominativo'])){
         $cognome = $_POST['cognome'];
         $nome =  $_POST['nome'];
         $codice_fiscale = $_POST['codice_fiscale'];
         $email = $_POST['email'];
 
         if(!controlloCodiceFiscale($codice_fiscale)){
-            echo '<script>alert("Il codice fiscale è sbagliato!")</script>';
+            echo '<script>$("#erroreCF").modal("show");</script>';
             exit();
         }
         if(!controlloEmail($email)){
-            echo '<script>alert("l\'email è sbagliata!")</script>';
+            echo '<script>$("#erroreMail").modal("show");</script>';
             exit();
         }
-        if(!controlloSeCFEsiste($pdo,$codice_fiscale)){
-            echo '<script>alert("Il codice fiscale esiste già!")</script>';
+        if(controlloSeCFEsiste($pdo,$codice_fiscale)){
+            echo '<script>$("#erroreCFEsistente").modal("show");</script>';
             exit();
         }
 
-        // Aggiunta dell'utente
+        // Aggiunta del Candidato
         $aggiunta = $pdo -> prepare("INSERT INTO Candidato (cognome,nome,codice_fiscale,email) VALUES (?,?,?,?)");
         $aggiunta -> bindValue(1, $cognome);
         $aggiunta -> bindValue(2, $nome);
@@ -34,11 +34,40 @@
         $aggiunta -> execute();
         $risultato = $aggiunta -> fetch();
 
-        // Aggiunta dell'utente alla tabella Storico_Candidato
+        // Aggiunta del Candidato alla tabella Storico_Candidato
         $aggiunta = $pdo -> prepare("INSERT INTO Storico_Candidato (id_storico_candidato) VALUES (?)");
         $aggiunta -> bindValue(1, $risultato[0]);
         $aggiunta -> execute();
+
+        echo("<script>successo();</script>");
 	}
+    if(isset($_POST['codice_fiscale_esistente']) && isset($_POST['aggiuntaNominativo'])){
+        $codice_fiscale = $_POST['codice_fiscale_esistente'];
+        if(controlloSeCFEsiste($pdo,$codice_fiscale)){
+            // Selezione del suo ID
+            $aggiunta = $pdo -> prepare("SELECT id_candidato FROM Candidato WHERE codice_fiscale = ?");
+            $aggiunta -> bindValue(1, $codice_fiscale);
+            $aggiunta -> execute();
+            $risultato = $aggiunta -> fetch();
+
+            // Aggiunta dell'utente alla tabella Storico_Candidato
+            $aggiunta = $pdo -> prepare("INSERT INTO Storico_Candidato (id_storico_candidato) VALUES (?)");
+            $aggiunta -> bindValue(1, $risultato[0]);
+            $aggiunta -> execute();
+            echo("<script>successo();</script>");
+            exit();
+        }
+        else{
+            echo '<script>$("#erroreCF").modal("show");</script>';
+            exit();
+        }
+	}
+    if(isset($_POST['cancellazioneNominativo'])){
+        // Cancellazione Candidato
+        $aggiunta = $pdo -> prepare("DELETE FROM Candidato WHERE codice_fiscale=?");
+        $aggiunta -> bindValue(1, $codice_fiscale);
+        $aggiunta -> execute();
+    }
 
     // Controllo del codice fiscale
     // @return true se il codice fiscale è valido
@@ -62,12 +91,12 @@
     // @return true se esiste
     // @return false se non esiste
     function controlloSeCFEsiste($pdo,$codice_fiscale){
-        $aggiunta = $pdo -> prepare("SELECT id_candidato FROM Candidato WHERE codice_fiscale = ?");
+        $aggiunta = $pdo -> prepare("SELECT COUNT(*) FROM Candidato WHERE codice_fiscale=?");
         $aggiunta -> bindValue(1, $codice_fiscale);
         $aggiunta -> execute();
-        count($aggiunta -> fetchAll());
-        if(count($aggiunta -> fetchAll()) > 0)
+        if($aggiunta->fetchColumn(0) > 0){
             return true;
+        }
         return false;
     }
 ?>

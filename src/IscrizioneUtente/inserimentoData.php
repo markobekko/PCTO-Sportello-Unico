@@ -10,5 +10,6 @@
         $aggiunta -> bindValue(1, $data_esame);
         $aggiunta -> bindValue(2, $sede_esame);
         $aggiunta -> execute();
+        echo("<script>successo();</script>");
 	}
 ?>

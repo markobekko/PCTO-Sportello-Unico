@@ -29,7 +29,7 @@ function esciSenzaSalvare(){
     table.load("ricezioneDati.php");
     window.location = "../index.html";
 }
-// Salva i dati nella tabella nel DB e poi esce
+// Salva i dati nella tabella nel DB
 function salvaDati(){
     var i = 0;
     $('#tabella tr').each(function(index) {
@@ -95,10 +95,12 @@ function archiviaPersona(){
 // Cancella la persona dalla tabella e dal DB
 function cancellaPersona(bottone) {
     var row = bottone.parentNode.parentNode;
-    $('#tabella tbody tr').each(function(index) {
+    $('#tabella tr').each(function(index) {
         // Se l'indice della riga è uguale all'indice del bottone premuto
-        if(index === (row.rowIndex - 1)){
+        console.log("Indice: " + index + " Indice Row: " + (row.rowIndex - 1));
+        if(index === (row.rowIndex)){
             var codice_fiscale = $(this).find("#codice_fiscale").val().trim();
+            console.log(codice_fiscale);
             if (codice_fiscale != null) {
                 $.ajax({
                     type:"POST",
@@ -113,6 +115,7 @@ function cancellaPersona(bottone) {
     });
     // Rimuove la persona dalla tabella
     row.parentNode.removeChild(row);
+    aggiornaTabella();
 }
 // Imposta il numero dei candidati che svolgono l'esame nella sede a Belluno/Feltre
 function aggiornaSedi(){
@@ -139,4 +142,5 @@ function salvaDataPerTutti(){
             element.value = document.getElementById("esameData").value;
         });
     }
+    salvaDati();
 }
