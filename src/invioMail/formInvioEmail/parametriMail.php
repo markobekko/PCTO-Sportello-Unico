@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Parametri mail</title>
-    <link rel="stylesheet" href="pcto_label.css">
+    <link rel="stylesheet" href="parametriMail.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -85,10 +85,9 @@
 <br>
 
   
-  
-  <input type="submit" class="button button2"  name="salva" id="salva" value="Salva">     
+  <input type="submit" class="buttonsalva"  name="salva" id="salva" value="Salva">     
 </form><br>
-<button class="button button3" formaction="../../index.html"name="Nsalva" id="Nsalva">Esci senza salvare</button>
+<button class="buttonesci" formaction="../../index.html"name="Nsalva" id="Nsalva">Esci senza salvare</button>
 <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6ddde08dbd7c0e26',m:'PoslWiVE8EDY.dEIcc0dqVQy6qsjV9sRSwo3KfiTDvU-1644921198-0-AQVzkXgsspH6o+lEhpDbvW0J84umFHenDjolIedb/9dx6r3RfiKmllhad8F0RMoFIz3jvtE31PKu3I4Z+X9EjaP+cieM0pDDGi8X6n3CyE7zYnz1IEMISShqpJi0jXY/sypSVS49pclU/iwUfy3tqlZR4QWL8JhpgkcRkGmmkvuKtqc+PdFJxUQKXD5Ly4EIco+QxULVgf5v/TWsR0mjnf0=',s:[0x855dd38c62,0x62b4142bb5],}})();</script>
 
 </body>

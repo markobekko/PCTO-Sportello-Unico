@@ -2,23 +2,23 @@
 <html>
     <meta charset="UTF-8">
         <title>Iscrizione</title>
-        <link rel="stylesheet" href="pcto_label.css">
+        <link rel="stylesheet" href="parametriMail.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
    
 <body>
 <h1>Parametri generali delle e-mail</h1>
 
-<form action="pcto_impostazioni.html" method="POST"></form>
+<form action="pcto_impostazioni.php" method="POST"></form>
 <element class=Impostazioni> 
   <script>
     function myFunction() {
-      window.location.href="pcto_impostazioni.html";
+      window.location.href="pcto_impostazioni.php";
     }
   </script>
-  <button class="impostazioni button1" onClick="myFunction()">Impostazioni</button>
-  </form>
+  <button class="impostazioni" onClick="myFunction()">Impostazioni</button>
 </element> 
+</form>
 
 <form method="POST">
 <table>
@@ -62,26 +62,6 @@
     <td><textarea id="mittente" name="mittente" rows="1" cols="80"></textarea></td>
   </tr>
   <tr>
-    <td>Destinatario CC</td>
-    <td>  <select style="width:145px;" id = "emailCC" ></select>
-      Inserisci: <input type="text" id = "txtCC" name = "txtCC" size="30px" />
-      <input type="button" id = "btnAdd" value = "Add" onclick = "addCC()" />
-      <input type="button" id = "btnDelete" value = "Delete All" onclick = "removeAllOptions(emailCC)">
-      <input type="button" id = "btnDeleteS" value = "Delete Selected" onclick ="removeOptions(emailCC)">
-     </td>
-  </tr>
-  <tr>
-  <tr>  
-    <td>Destinatario CCN:</td>
-    <td><select style="width:145px;" id = "emailCCN" ></select>
-      Inserisci: <input type="text" id = "txtCCN" name = "txtCCN" size="30px"/>
-      <input type="button" id = "btnAdd" value = "Add" onclick = "addCCN()" />
-      <input type="button" id = "btnDelete" value = "Delete All" onclick = "removeAllOptions(emailCCN)">
-      <input type="button" id = "btnDeleteS" value = "Delete Selected" onclick ="removeOptions(emailCCN)">
-    </td>
-  </tr>
-  <tr>
-  <tr>
     <td>Oggetto Email Esito al test:</td>
     <td><textarea id="oggetto" name="oggetto" rows="1" cols="80"></textarea></td>
   </tr>
@@ -92,8 +72,8 @@
 </table>
 </form> <br>
   <element class=bottoni> 
-    <button class="button button2">Salva </button>
-    <button class="button button3">Salva senza inviare</button>
+    <button class="buttonsalva">Salva </button>
+    <button class="buttonesci">Salva senza inviare</button>
   </element> 
 </body>
 </html>

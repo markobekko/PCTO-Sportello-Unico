@@ -1,0 +1,112 @@
+html {
+    line-height: 1.15; 
+}
+button,
+table,
+html,
+body,
+section {
+    display: block;
+}
+body{
+    background: #fafaef;
+}
+textarea {
+    resize: none;
+}
+table{
+    font-size: 106%;
+}
+.buttonsalva {
+    border: none;
+    color: rgba(12, 12, 12, 0.548);
+    padding: 1% 19%;
+    text-align: center;
+    font-size: 106%;
+    margin-top: 4%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color:#fbfbfb;
+}
+.buttonsalva:hover {
+    background-color: #51282a;
+    color: white;
+  }
+.buttonesci{
+    border: none;
+    color: rgba(12, 12, 12, 0.548);
+    padding: 1% 8%;
+    text-align: center;
+    font-size: 106%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color:#fbfbfb;
+}
+.buttonesci:hover {
+    background-color: #51282a;
+    color: white;
+  }
+.impostazioni {
+    border: none;
+    color: rgba(12, 12, 12, 0.548);
+    padding: 1% 3%;
+    text-align: center;
+    font-size: 106%;
+    left: 5%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color:#fbfbfb;
+}
+.impostazioni:hover{
+    background-color: #51282a;
+    color: white;
+}
+.buttonritorna {
+    border: none;
+    color: rgba(12, 12, 12, 0.548);
+    padding: 1% 8%;
+    text-align: center;
+    font-size: 106%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color:#fbfbfb;
+}
+.buttonritorna:hover {
+    background-color: #51282a;
+    color: white;
+  }
+.buttonritorna1 {
+    border: none;
+    color: rgba(12, 12, 12, 0.548);
+    padding: 1% 8%;
+    text-align: center;
+    font-size: 106%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color:#fbfbfb;
+}
+.buttonritorna1:hover {
+    background-color: #51282a;
+    color: white;
+  }
+
+h1{
+    display: inline-block;
+    margin: auto;
+    margin: auto;
+}
+@media screen and (max-width: 800px) {
+    .impostazioni{
+        left:40%;
+    }
+}
