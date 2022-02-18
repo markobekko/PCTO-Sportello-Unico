@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Iscrizione</title>
+    <title>Parametri mail</title>
     <link rel="stylesheet" href="pcto_label.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +43,7 @@
           <td>Password:</td>
         <td>
             <p>
-              <input type="password" name="password" id="password" size="97" readonly="readonly">
+              <input type="password" name="password" id="password" size="82" readonly="readonly">
               <i class="bi bi-eye-slash" id="togglePassword"></i>
           </p>
         </td>
@@ -67,6 +67,8 @@
         <td>Mittente:</td>
         <td><textarea id="mittente" name="mittente" rows="1" cols="80" readonly="readonly"></textarea></td>
       </tr>
+ 
+
       <tr>
     <td>Destinatario CC</td>
     <td>  <select style="width:145px;" id = "emailCC" ></select>
@@ -97,6 +99,11 @@
   </table>
 <br>
 
+  
+
+  
+  <button class="button button2" formmethod="post">Salva </button>     
+  <button class="button button3" formaction="../../index.html">Esci senza salvare</button>
 </form><br>
 <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6ddde08dbd7c0e26',m:'PoslWiVE8EDY.dEIcc0dqVQy6qsjV9sRSwo3KfiTDvU-1644921198-0-AQVzkXgsspH6o+lEhpDbvW0J84umFHenDjolIedb/9dx6r3RfiKmllhad8F0RMoFIz3jvtE31PKu3I4Z+X9EjaP+cieM0pDDGi8X6n3CyE7zYnz1IEMISShqpJi0jXY/sypSVS49pclU/iwUfy3tqlZR4QWL8JhpgkcRkGmmkvuKtqc+PdFJxUQKXD5Ly4EIco+QxULVgf5v/TWsR0mjnf0=',s:[0x855dd38c62,0x62b4142bb5],}})();</script>
 </body>

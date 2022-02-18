@@ -54,20 +54,8 @@
       </script> 
       </table>
       <button class="impostazioni button1" name="salva" id="salva" formmethod="post" formaction="./salvaJSON.php" >Salva</button>
-      <button class="button button1" name="ritornaB" id="ritornaB" onclick=ritornaN() >Ritorna ai parametri</button>
+      <button class="button button1" name="ritornaB" id="ritornaB" formaction="./parametriMail.php" >Ritorna ai parametri</button>
     </form>
-
-<!-- bottone con script per il ritorno alla pagina principale-->
-
-
-<script>
-  function ritornaN() {
-    alert("Non salvato");
-  window.location.href="./parametriMail.php";
-  }
-
-
-</script>
 
 </body>
 </html>  
