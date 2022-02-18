@@ -20,7 +20,7 @@
             </div>
             <button type='button' id='indietro'>Indietro</button>
             <div class='superiore'>
-                <button type='button' id='salva'>Salva</button>
+                <button type='button' id='esciSalva'>Salva</button>
                 <button type='button' id='esciSenzaSalvare'>Esci senza salvare</button>
                 <button type='button' id='spedisci'>Spedisci invito</button>
                 <button type='button' id='archivia'>Archivia Tutto</button>
@@ -66,7 +66,7 @@
                     esciSenzaSalvare();
                     aggiornaTabella();
                 };
-                document.getElementById('salva').onclick = function() {
+                document.getElementById('esciSalva').onclick = function() {
                     salvaDati();
                 };
                 document.getElementById('archivia').onclick = function() {
