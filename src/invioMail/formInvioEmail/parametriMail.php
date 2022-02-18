@@ -43,7 +43,7 @@
           <td>Password:</td>
         <td>
             <p>
-              <input type="password" name="password" id="password" size="82" readonly="readonly">
+              <input type="password" name="password" id="password" size="97" readonly="readonly">
               <i class="bi bi-eye-slash" id="togglePassword"></i>
           </p>
         </td>
@@ -88,7 +88,7 @@
       <input type="button" id = "btnDeleteS" value = "Delete Selected" onclick ="removeOptions(emailCCN)">
     </td>
   </tr>
-  <tr>
+  <tr> 
     <td>Oggetto Email Invito al test:</td>
     <td><textarea id="oggetto" name="oggetto" rows="1" cols="80" readonly="readonly"></textarea></td>
   </tr>
@@ -100,7 +100,6 @@
 <br>
 
   
-
   
   <button class="button button2" formmethod="post">Salva </button>     
   <button class="button button3" formaction="../../index.html">Esci senza salvare</button>
