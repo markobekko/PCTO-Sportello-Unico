@@ -61,6 +61,6 @@
             
         </script>
 
-        <input id="freccia" onclick='window.location = "../index.html";'type="image" src="../img/freccia.png" width="40px" style="margin-left: -30%; position:absolute">
+        <input id="freccia" onclick='window.location = "../index.html";'type="image" src="../img/freccia.png" width="40px" style="margin-top: -20%; position:absolute">
     </body>
 </html>
