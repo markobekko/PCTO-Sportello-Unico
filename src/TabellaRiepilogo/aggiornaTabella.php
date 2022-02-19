@@ -13,6 +13,7 @@
         aggiornaDataEsame($pdo);
     }
 
+    // Aggiorna il cognome nel DB
     function aggiornaCognome($pdo){
         $aggiunta = $pdo -> prepare("UPDATE Candidato SET cognome = ? WHERE codice_fiscale = ?");
         $aggiunta -> bindValue(1, $_POST['cognome']);
@@ -20,6 +21,7 @@
         $aggiunta -> execute();
     }
 
+    // Aggiorna il nome nel DB
     function aggiornaNome($pdo){
         $aggiunta = $pdo -> prepare("UPDATE Candidato SET nome = ? WHERE codice_fiscale = ?");
         $aggiunta -> bindValue(1, $_POST['nome']);
@@ -27,6 +29,7 @@
         $aggiunta -> execute();
     }
 
+    // Aggiorna l'email nel DB
     function aggiornaEmail($pdo){
         $aggiunta = $pdo -> prepare("UPDATE Candidato SET email = ? WHERE codice_fiscale = ?");
         $aggiunta -> bindValue(1, $_POST['email']);
@@ -34,6 +37,7 @@
         $aggiunta -> execute();
     }
 
+    // Aggiorna la data dell'esame nel DB
     function aggiornaDataEsame($pdo){
         $aggiunta = $pdo -> prepare("UPDATE Storico_Candidato SET id_storico_esame = (SELECT id_esame FROM Sessione_Esame WHERE data_esame=? AND sede_esame=?) WHERE id_storico_candidato = (SELECT id_candidato FROM Candidato WHERE codice_fiscale=?) AND archiviato='No'");
         $aggiunta -> bindValue(1, $_POST['data_esame']);
@@ -42,6 +46,7 @@
         $aggiunta -> execute();
     }
 
+    // Aggiorna il risultato dell'invio dell'email nel DB
     function aggiornaSpedizioneEmail($pdo){
         $aggiunta = $pdo -> prepare("UPDATE Storico_Candidato SET spedito_utente = ? WHERE id_storico_candidato = (SELECT id_candidato FROM Candidato WHERE codice_fiscale=?) AND archiviato='No'");
         if($_POST['spedito_utente'] === 'true'){
@@ -54,6 +59,7 @@
         $aggiunta -> execute();
     }
     
+    // Aggiorna l'esito dell'esame nel DB
     function aggiornaEsitoEsame($pdo){
         $aggiunta = $pdo -> prepare("UPDATE Storico_Candidato SET esito_esame=? WHERE id_storico_candidato = (SELECT id_candidato FROM Candidato WHERE codice_fiscale=?) AND id_storico_esame = (SELECT id_esame FROM Sessione_Esame WHERE data_esame=? AND sede_esame=?) AND archiviato='No'");
         $aggiunta -> bindValue(1, $_POST['esito_esame']);

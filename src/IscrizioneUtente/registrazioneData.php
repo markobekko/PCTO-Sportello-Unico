@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Iscrizione</title>
+        <title>Registrazione Data</title>
         <link rel="stylesheet" href="../css/iscrizione.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -12,7 +12,6 @@
         <!-- Form: -->
         <div class="container">
             <div class="titolo">Inserimento nuova data</div>
-            <button type="button" id="indietro">Indietro</button>
             <form action="" method="POST">
                 <div class="user-details">
                     <div class="input-box">

@@ -7,7 +7,9 @@
     if($risultatoCandidato -> num_rows > 0){
         $idEsame = 0;
         while($row=$risultatoCandidato -> fetch_assoc()){
+            // Se il candidato non è stato archiviato allora lo aggiungerà alla tabella Riepilogo
             if($row["archiviato"] == "No"){
+                // Se nel DB il flag per l'invio dell'email è impostato a 'Si' allora aggiunge al checkbox checked='true'
                 if($row["spedito_utente"] == "Si"){
                     $valoreSpedizione = "<input data-label='spedizione invito' name='check_box' id='check_box' type='checkbox' id='spedito_utente' checked='true'>";
                 }
@@ -32,7 +34,7 @@
                             echo "<option value='Non Ammesso'>Non Ammesso</option>";
                             echo "</select>";
                     echo "</td>";
-                    echo "<td><input type='button' value='Delete' onclick='cancellaPersona(this)'/></td>";
+                    echo "<td><input type='button' value='Elimina' onclick='cancellaPersona(this)'/></td>";
                 echo "</tr>";
             }
         }

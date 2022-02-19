@@ -2,8 +2,6 @@
 function invioMail(){
     src ="./master_script.js";
     $.ajax({
-       
-        
         type:"POST",
         url: "../invioMail/email/email.php",
         success: function(){//email inviate con successo

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Riepilogo iscrizioni</title>
+        <meta charset="UTF-8">
+        <title>Riepilogo archiviati</title>
         <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
         <script src='https://www.kryogenix.org/code/browser/sorttable/sorttable.js'></script>
@@ -37,13 +38,15 @@
                     </tbody>
                 </table>
             </div>
-            <script>cercaParole();</script>
+            <script>cercaCandidato();</script>
             <script>aggiornaSedi();</script>
             <script>
                 var table = $('#datiTabella');
+                // Aggiornamento della tabella
                 document.getElementById('aggiorna').onclick = function() {
                     aggiornaTabella();
                 };
+                // Redirect verso la pagina index.html
                 document.getElementById('indietro').onclick = function() {
                     window.location = '../index.html';
                 };

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <meta charset="UTF-8">
         <title>Riepilogo iscrizioni</title>
+        <script src='../js/master_script.js'></script>
+        <script src='../js/email_script.js'></script>
+        <link rel="stylesheet" href="../css/styleRiepilogo.css">
         <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
         <script src='https://www.kryogenix.org/code/browser/sorttable/sorttable.js'></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <script src='../js/master_script.js'></script>
-        <script src='../js/email_script.js'></script>
-        <link rel="stylesheet" href="../css/styleRiepilogo.css">
     </head>
     <body>
         <div class='principale'>
@@ -54,34 +55,41 @@
                     </tbody>
                 </table>
             </div>
-            <script>cercaParole();</script>
+            <!-- Funzione di ricerca del candidato -->
+            <script>cercaCandidato();</script>
+            <!-- Imposta il numero dei candidati che svolgono l'esame nella sede a Belluno/Feltre  -->
             <script>aggiornaSedi();</script>
         </div>
         <script>
                 var table = $('#datiTabella');
+                // Aggiorna la tabella prendendo i dati dal DB
                 document.getElementById('aggiorna').onclick = function() {
                     aggiornaTabella();
                 };
+                // Redirect verso la pagina index.html
                 document.getElementById('esciSenzaSalvare').onclick = function() {
-                    esciSenzaSalvare();
-                    aggiornaTabella();
+                    window.location = '../index.html';
                 };
+                // Salva i dati dalla tabella nel DB
                 document.getElementById('esciSalva').onclick = function() {
                     salvaDati();
                 };
+                // Archivia i candidati con un esito
                 document.getElementById('archivia').onclick = function() {
                     archiviaPersona();
                     aggiornaTabella();
                 };
+                // Salva la data per tutti i candidati
                 document.getElementById('salvaData').onclick = function() {
                     salvaDataPerTutti();
                 };
+                // Redirect verso la pagina index.html
                 document.getElementById('indietro').onclick = function() {
                     window.location = '../index.html';
                 };
+                // Invia l'email ad ogni candidato che non l'ha ancora ricevuta
                 document.getElementById('spedisci').onclick = function() {
                    invioMail();
-                   alert("Invio in corso");
                 };
             </script>
     </body>
