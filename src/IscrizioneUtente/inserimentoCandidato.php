@@ -1,20 +1,47 @@
 <?php
     include '../connessione.php';
     $pdo = connessione("localhost","Sportello Unico","root","");
+    // Se il codice fiscale esiste già nel DB allora lo aggiunge nella tabella Storico_Candidato
+    if(isset($_POST['codice_fiscale_esistente']) && isset($_POST['aggiuntaNominativo'])){
+        $codice_fiscale = $_POST['codice_fiscale_esistente'];
+        if(controlloSeCFEsiste($pdo,$codice_fiscale)){
+            // Selezione del suo ID
+            $aggiunta = $pdo -> prepare("SELECT id_candidato FROM Candidato WHERE codice_fiscale = ?");
+            $aggiunta -> bindValue(1, $codice_fiscale);
+            $aggiunta -> execute();
+            $risultato = $aggiunta -> fetch();
+
+            // Aggiunta dell'utente alla tabella Storico_Candidato
+            $aggiunta = $pdo -> prepare("INSERT INTO Storico_Candidato (id_storico_candidato) VALUES (?)");
+            $aggiunta -> bindValue(1, $risultato[0]);
+            $aggiunta -> execute();
+            echo("<script>successoInserimento();</script>");
+            exit();
+        }
+        else{
+            echo('<script>document.getElementById("codice_fiscale").value = ' . '"'.$_POST['codice_fiscale_esistente']. '";' . "</script>");
+            echo("<script>mostraIscrizionePersona()</script>");       
+            exit();
+        }
+	}
+    // Se il codice fiscale non esiste allora si avrà il form in cui compilare i campi per la creazione di un nuovo
 	if(isset($_POST['cognome']) && isset($_POST['nome']) && isset($_POST['codice_fiscale']) && isset($_POST['email']) && isset($_POST['registrazioneNominativo'])){
         $cognome = $_POST['cognome'];
         $nome =  $_POST['nome'];
         $codice_fiscale = $_POST['codice_fiscale'];
         $email = $_POST['email'];
 
+        // Se il codice fiscale non è valido dà errore
         if(!controlloCodiceFiscale($codice_fiscale)){
             echo '<script>$("#erroreCF").modal("show");</script>';
             exit();
         }
+        // Se l'email non è valida dà errore
         if(!controlloEmail($email)){
             echo '<script>$("#erroreMail").modal("show");</script>';
             exit();
         }
+        // Se il codice fiscale esiste già dà errore
         if(controlloSeCFEsiste($pdo,$codice_fiscale)){
             echo '<script>$("#erroreCFEsistente").modal("show");</script>';
             exit();
@@ -39,35 +66,10 @@
         $aggiunta -> bindValue(1, $risultato[0]);
         $aggiunta -> execute();
 
-        echo("<script>successo();</script>");
+        echo("<script>successoInserimento();</script>");
+        echo("<script>nascondiIscrizionePersona();</script>");
+        exit();
 	}
-    if(isset($_POST['codice_fiscale_esistente']) && isset($_POST['aggiuntaNominativo'])){
-        $codice_fiscale = $_POST['codice_fiscale_esistente'];
-        if(controlloSeCFEsiste($pdo,$codice_fiscale)){
-            // Selezione del suo ID
-            $aggiunta = $pdo -> prepare("SELECT id_candidato FROM Candidato WHERE codice_fiscale = ?");
-            $aggiunta -> bindValue(1, $codice_fiscale);
-            $aggiunta -> execute();
-            $risultato = $aggiunta -> fetch();
-
-            // Aggiunta dell'utente alla tabella Storico_Candidato
-            $aggiunta = $pdo -> prepare("INSERT INTO Storico_Candidato (id_storico_candidato) VALUES (?)");
-            $aggiunta -> bindValue(1, $risultato[0]);
-            $aggiunta -> execute();
-            echo("<script>successo();</script>");
-            exit();
-        }
-        else{
-            echo '<script>$("#erroreCF").modal("show");</script>';
-            exit();
-        }
-	}
-    if(isset($_POST['cancellazioneNominativo'])){
-        // Cancellazione Candidato
-        $aggiunta = $pdo -> prepare("DELETE FROM Candidato WHERE codice_fiscale=?");
-        $aggiunta -> bindValue(1, $codice_fiscale);
-        $aggiunta -> execute();
-    }
 
     // Controllo del codice fiscale
     // @return true se il codice fiscale è valido
@@ -87,7 +89,7 @@
         }
         return true;
     }
-    // Controllo se il codice fiscale esiste già tra gli utenti
+    // Controllo se il codice fiscale esiste già tra i candidati
     // @return true se esiste
     // @return false se non esiste
     function controlloSeCFEsiste($pdo,$codice_fiscale){

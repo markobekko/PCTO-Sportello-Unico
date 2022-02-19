@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <script src='../js/master_script.js'></script>
         <script src='../js/email_script.js'></script>
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/styleRiepilogo.css">
     </head>
     <body>
         <div class='principale'>

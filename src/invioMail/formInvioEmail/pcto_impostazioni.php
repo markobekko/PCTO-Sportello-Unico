@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     
         <title>Impostazioni</title>
-        <link rel="stylesheet" href="./pcto_impostazioni.css">
+        <link rel="stylesheet" href="./parametriMail.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         
@@ -53,17 +53,24 @@
               password.setAttribute("type", type);
               // toggle the icon
               this.classList.toggle("bi-eye");
-          });
+          }); 
 
       </script> 
       <input type="submit" class="impostazioni button1" name="salva" id="salva" value="Salva">
     </form>
-    <button class="button button1" name="ritornaB" id="ritornaB" onclick=ritornaP() >Ritorna ai parametri</button>
+    <button class="buttonritorna" name="ritornaB" id="ritornaB" onclick=ritornaP() >Ritorna ai parametri generali invito</button>
           <script type="text/javascript">
             function ritornaP(){
             window.location.href="./parametriMail.php";
             }
           </script>
+          <br>
+     <button class="buttonritorna1" name="ritornaE" id="ritornaE" onclick=ritornaP() >Ritorna ai parametri generali esito</button>
+          <script type="text/javascript">
+            function ritornaP(){
+            window.location.href="./esitoMail.php";
+            }
+          </script>  
 </body>
 </html>  
 
