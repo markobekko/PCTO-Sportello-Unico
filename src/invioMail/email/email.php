@@ -13,7 +13,9 @@ require_once "../PHPMailer/Exception.php";
         
 
 
-    $query = "SELECT nome,cognome,email,codice_fiscale FROM candidato ";
+    $query = "SELECT nome,cognome,email,codice_fiscale FROM candidato WHERE 
+    (SELECT id_storico_candidato FROM storico_candidato WHERE id_storico_candidato=id_candidato AND archiviato='No' 
+    AND id_storico_esame <> 1 AND spedito_utente<>'Si') ";
     $q = $pdo->query($query);
     $rows=$q->fetchAll(PDO::FETCH_ASSOC);
 
@@ -64,14 +66,11 @@ foreach($rows as $row){
         //$subject="Convocazione TEST LINGUA ITALIANA per il rilascio PDS lungo periodo CE";
         
         $body=invioBody($row['nome']." ".$row['cognome'],$dataG,$sede);
-      
-
+        
+        $mail-> CharSet = "UFT-8";
         //Impostazioni mail da inviare
          // specifico i gradi di priorità
         $mail->Priority=1;//1=alta 2=media 3=bassa
-        //specifica la priorità della mail  Urgent(urgente) Highest(Molto alta) High(alta)
-        // $mail->addCustomHeader("X-MSMail-Priority:Urgeny");
-        // $mail->addCustomHeader("Importance:Urgent");
         //email in formato html
         $mail->isHTML(true);
         $mail->setFrom($myEmail, $utente);//nome e mail del mittente

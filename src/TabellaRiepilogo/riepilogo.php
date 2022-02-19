@@ -81,6 +81,7 @@
                 };
                 document.getElementById('spedisci').onclick = function() {
                    invioMail();
+                   alert("Invio in corso");
                 };
             </script>
     </body>

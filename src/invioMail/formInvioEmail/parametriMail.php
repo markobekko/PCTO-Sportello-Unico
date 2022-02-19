@@ -25,8 +25,8 @@
 
 <div class="allineamento">
     <h1>Parametri generali delle e-mail</h1>
+    <button class="impostazioni" onclick="returnI()">Indietro</button>
   <button  class="impostazioni" onclick="impostazioni()">Impostazioni</button>
-    <button class="impostazioni" onclick="returnI()">Ritorna alla pagina principale</button>
       </div><br>
   <form method="post" action="../../TabellaRiepilogo/riepilogo.php">
     
@@ -81,6 +81,10 @@
     <td>Corpo Email Invito al test:</td>
     <td><textarea id="corpo" name="corpo" rows="20" cols="80" readonly="readonly"></textarea></td>
   </tr>
+  <tr>
+    <td>Fascia oraria</td>
+    <td><textarea id="fascia" name="fascia" rows="1" cols="80" readonly=readonly></textarea></td>
+  </tr>
   </table>
 <br>
 
@@ -89,10 +93,15 @@
   
   <input type="submit" class="button button2"  name="salva" id="salva" value="Salva">     
 </form><br>
-<button class="button button3" formaction="../../index.html"name="Nsalva" id="Nsalva">Esci senza salvare</button>
+<button class="button1 button3" onclick=ritornaH() name="Nsalva" id="Nsalva">Esci senza salvare</button>
 <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6ddde08dbd7c0e26',m:'PoslWiVE8EDY.dEIcc0dqVQy6qsjV9sRSwo3KfiTDvU-1644921198-0-AQVzkXgsspH6o+lEhpDbvW0J84umFHenDjolIedb/9dx6r3RfiKmllhad8F0RMoFIz3jvtE31PKu3I4Z+X9EjaP+cieM0pDDGi8X6n3CyE7zYnz1IEMISShqpJi0jXY/sypSVS49pclU/iwUfy3tqlZR4QWL8JhpgkcRkGmmkvuKtqc+PdFJxUQKXD5Ly4EIco+QxULVgf5v/TWsR0mjnf0=',s:[0x855dd38c62,0x62b4142bb5],}})();</script>
 
 </body>
+<script>
+  function ritornaH(){
+    window.location.href="../../index.html";
+  }
+</script>
 
 </html>
 

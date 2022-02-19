@@ -37,7 +37,11 @@
           </p>
           </td>
         </tr>
-
+        <tr>
+          <td>Fascia oraria</td>
+          <td><textarea id="fascia" name="fascia" rows="1" cols="80" ></textarea></td>
+       </tr>
+      </table>
         <script>
         //blocco in javascript per insierire l'icona dell psw e premendola poterla vederla o non
           const togglePassword = document.querySelector("#togglePassword");
@@ -52,7 +56,6 @@
           });
 
       </script> 
-      </table>
       <input type="submit" class="impostazioni button1" name="salva" id="salva" value="Salva">
     </form>
     <button class="button button1" name="ritornaB" id="ritornaB" onclick=ritornaP() >Ritorna ai parametri</button>
