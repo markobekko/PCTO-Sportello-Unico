@@ -65,6 +65,7 @@ form button{
     height: 45px;
     margin: 45px 0;
 }
+
 form .button input{
     height: 100%;
     width: 100%;
@@ -204,4 +205,21 @@ label {
         position:absolute;
         top: 30%;
     }
+}
+.deleteButton{
+    height: 100%;
+    width: 100%;
+    color: rgba(12, 12, 12, 0.548);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: linear-gradient(273deg, #b7b5b8, #a8f8b8);
+}
+.deleteButton:hover{
+    background: linear-gradient(-273deg, #b7b5b8, #a8f8b8);
+    color: rgba(12, 12, 12, 0.548);
+    color: rgb(12, 12, 12);
 }
