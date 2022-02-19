@@ -125,10 +125,10 @@ function aggiornaSedi(){
         document.getElementById("numFeltre").value = 0;
         var i = 0;
         $('table tbody tr').each(function(index) {
-            var esame = $('#tabella').find("#esame" + i++).val().split(" - ");
-            if(esame[1] == "Belluno" && $('#tabella').is(':visible'))
+            var esame = $(this).find("#esame" + i++).val().split(" - ");
+            if(esame[1] == "Belluno" && $(this).is(':visible'))
                 document.getElementById("numBelluno").stepUp(1);
-            else if(esame[1] == "Feltre" && $('#tabella').is(':visible'))
+            else if(esame[1] == "Feltre" && $(this).is(':visible'))
                 document.getElementById("numFeltre").stepUp(1);
         });
     }, 500);
