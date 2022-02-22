@@ -65,12 +65,7 @@
             }
           </script>
           <br>
-     <button class="buttonritorna1" name="ritornaE" id="ritornaE" onclick=ritornaP() >Ritorna ai parametri generali esito</button>
-          <script type="text/javascript">
-            function ritornaP(){
-            window.location.href="./esitoMail.php";
-            }
-          </script>  
+
 </body>
 </html>  
 

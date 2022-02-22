@@ -7,13 +7,21 @@
     "indirizzoBL":"Via Mur di Cadola, 12, 32100 Belluno BL",
     "recapito":"043731143",
     "corpo4":"si terrà la prova del test di lingua italiana A2 ai fini del rilascio del permesso di soggiorno di lungo periodo CE.",
-    "lista1":["Documento di identità e permesso di soggiorno in corso di validità",
+    "corpo5":"Cosa serve:",
+    "lista1":["Documento di identià e permesso di soggiorno in corso di validità",
         "Penna nera","Arrivare puntuali",
         "Non puoi essere accompagnato in aula da altre persone",
         "I figli non possono entrare nella sede d'esame(organizzarsi in modo che qualcuno possa prendersi cura di loro)"
     ],
-    "corpo5":"Indicazioni igienico-sanitarie e di sicurezza",
-    "corpo6":"Ciascuno candidato è tenuto a:",
-    "lista2":["Possedere ed esibire la certificazione verde Covid-19","Indossare la mascherina"]
+    "corpo6":"Indicazioni igienico-sanitarie e di sicurezza",
+    "corpo7":"Ciascuno candidato è tenuto a:",
+    "lista2":["Possedere ed esibire la certificazione verde Covid-19",
+        "Indossare la mascherina","Disinfettarsi le mani al momento dell'accesso all'edificio e durante la permanenza all’interno dell’edificio",
+    "Mantenere la distanza interpersonale di almeno 1 metro ed evitare assembramenti",
+    "Rimanere all’interno dell’edificio per il tempo necessario allo svolgimento del test",
+    "Utilizzare la propria penna"],
+    "corpo8":"Si rammenta che la mancata partecipazione non giustificata da certificato rilasciato dal medico di famiglia alla predetta sessione di test o il mancato superamento del test non consentiranno di presentare una nuova richiesta di partecipazione prima di 90 giorni dalla data dell' esame.",
+    "corpo9":"Si informa altresì, che l’esito sarà consultabile dopo qualche giorno, con il proprio numero del permesso di soggiorno sul sito www.prefettura.it/belluno  Sportello Unico per l’Immigrazione, Test di lingua italiana, esiti, oppure collegandosi al sito del Ministero dell'Interno: https://nullaostalavoro.dlci.interno.it - con le proprie credenziali SPID, pertanto non verrà trasmessa alcuna lettera scritta.",
+    "corpo10":"Sarà cura di questo S.U.I. trasmettere l’esito, in via telematica, alla competente Questura."
 
 }
