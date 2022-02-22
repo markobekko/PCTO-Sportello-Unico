@@ -62,7 +62,6 @@ function confermaCancellazione(){
                 label: "Si",
                 className: 'btn-success',
                 callback: function(){
-                    console.log('Custom OK clicked');
                     $codice_fiscale_esistente = document.getElementById("codice_fiscale_esistente").value;
                     $.ajax({
                         type:"POST",
@@ -107,6 +106,15 @@ function erroreCancellazione(){
     setTimeout(
         function() {
             document.getElementById("erroreCancellazione").style.display = "none";
+        },2500,
+    );
+}
+// Mostra l'errore, che poi scompare dopo 2500ms
+function erroreData(){
+    document.getElementById("erroreData").style.display = "block";
+    setTimeout(
+        function() {
+            document.getElementById("erroreData").style.display = "none";
         },2500,
     );
 }

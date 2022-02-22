@@ -15,5 +15,4 @@
     else{
         die("Errore");
     }
-    
 ?>
