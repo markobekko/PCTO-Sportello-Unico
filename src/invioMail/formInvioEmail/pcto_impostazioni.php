@@ -32,7 +32,7 @@
           <td>Password:</td>
           <td>
             <p>
-              <input type="password" name="password" id="password" size="97">
+              <input type="password" name="password" id="password" style="width: 603px;height: 16px;">
               <i class="bi bi-eye-slash" id="togglePassword"></i>
           </p>
           </td>

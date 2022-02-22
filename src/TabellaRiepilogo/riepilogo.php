@@ -90,6 +90,7 @@
                 // Invia l'email ad ogni candidato che non l'ha ancora ricevuta
                 document.getElementById('spedisci').onclick = function() {
                    invioMail();
+                   alert("Invio in corso");
                 };
             </script>
     </body>
