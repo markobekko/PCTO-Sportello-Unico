@@ -1,5 +1,5 @@
-// Funzione di ricerca della parole per ogni valore degli <input> nella tabella
-function cercaParole(){
+// Funzione di ricerca del candidato
+function cercaCandidato(){
     $(document).ready(function(){
         // Numero delle colonne da cercare
         var notFoundCount = -5;
@@ -32,7 +32,9 @@ function aggiornaSedi(){
         document.getElementById("numFeltre").value = 0;
         var i = 0;
         $('table tbody tr').each(function(index) {
+            // La data e sede sono considerati un valore unico, perciò bisogna separarli eseguendo uno split
             var esame = $(this).find("#esame" + i++).val().split(" - ");
+            // Se la sede è Belluno/Feltre ed è visibile nella tabella allora incrementa il valore di 1
             if(esame[1] == "Belluno" && $(this).is(':visible'))
                 document.getElementById("numBelluno").stepUp(1);
             else if(esame[1] == "Feltre" && $(this).is(':visible'))

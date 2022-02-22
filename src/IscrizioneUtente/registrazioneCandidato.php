@@ -33,7 +33,7 @@
             <!-- Bottone per cancellare il nominativo -->
             <div class="button">
                 <br><input class="deleteButton" type="submit" id="cancellazioneNominativo" name="cancellazioneNominativo" onclick="confermaCancellazione();" value="Elimina nominativo" >
-                <br>
+                <br><br>
             </div>
             <!-- Messaggi di successo/errore -->
             <div id="successoInserimento" style="display:none" class="alert alert-success">

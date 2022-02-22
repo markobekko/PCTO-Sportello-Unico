@@ -1,5 +1,5 @@
-// Funzione di ricerca della parole per ogni valore degli <input> nella tabella
-function cercaParole(){
+// Funzione di ricerca del candidato
+function cercaCandidato(){
     $(document).ready(function(){
         // Numero delle colonne da cercare
         var notFoundCount = -7;
@@ -24,11 +24,6 @@ function cercaParole(){
 function aggiornaTabella(){
     table.load('ricezioneDati.php');
 }
-// Ritorna al menù senza salvare
-function esciSenzaSalvare(){
-    table.load("ricezioneDati.php");
-    window.location = "../index.html";
-}
 // Salva i dati nella tabella nel DB
 function salvaDati(){
     var i = 0;
@@ -48,6 +43,7 @@ function salvaDati(){
                 var spedito_utente = false;
             }
             var esito_esame = $(this).find('#esito option:selected').text().trim();
+            // Se la data dell'esame è nulla allora nella richiesta non verrà inclusa
             if(data_esame == " - "){
                 $richiesta = "cognome=" + cognome + "\u0026nome=" + nome + "\u0026codice_fiscale="+ codice_fiscale + "\u0026email="+ email + "\u0026spedito_utente=" + spedito_utente + "\u0026esito_esame=" + esito_esame;
             }
@@ -92,12 +88,11 @@ function archiviaPersona(){
         }
     });
 }
-// Cancella la persona dalla tabella e dal DB
+// Cancella l'istanza della persona dalla tabella e dal DB
 function cancellaPersona(bottone) {
     var row = bottone.parentNode.parentNode;
     $('#tabella tr').each(function(index) {
-        // Se l'indice della riga è uguale all'indice del bottone premuto
-        console.log("Indice: " + index + " Indice Row: " + (row.rowIndex - 1));
+        // Se l'indice della riga è uguale all'indice del bottone premuto allora cancella la persona
         if(index === (row.rowIndex)){
             var codice_fiscale = $(this).find("#codice_fiscale").val().trim();
             console.log(codice_fiscale);
@@ -125,7 +120,9 @@ function aggiornaSedi(){
         document.getElementById("numFeltre").value = 0;
         var i = 0;
         $('table tbody tr').each(function(index) {
+            // La data e sede sono considerati un valore unico, perciò bisogna separarli eseguendo uno split
             var esame = $(this).find("#esame" + i++).val().split(" - ");
+            // Se la sede è Belluno/Feltre ed è visibile nella tabella allora incrementa il valore di 1
             if(esame[1] == "Belluno" && $(this).is(':visible'))
                 document.getElementById("numBelluno").stepUp(1);
             else if(esame[1] == "Feltre" && $(this).is(':visible'))
