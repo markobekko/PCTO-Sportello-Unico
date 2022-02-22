@@ -28,7 +28,7 @@
 	if(isset($_POST['cognome']) && isset($_POST['nome']) && isset($_POST['codice_fiscale']) && isset($_POST['email']) && isset($_POST['registrazioneNominativo'])){
         $cognome = $_POST['cognome'];
         $nome =  $_POST['nome'];
-        $codice_fiscale = $_POST['codice_fiscale'];
+        $codice_fiscale = strtoupper($_POST['codice_fiscale']);
         $email = $_POST['email'];
 
         // Se il codice fiscale non è valido dà errore
