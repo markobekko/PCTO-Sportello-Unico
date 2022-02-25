@@ -52,7 +52,7 @@ $mail->SMTPSecure = "tls";//telnet(porta 25), ssl(porta 465), tls(porta 587)
     //leggo la data dell'esame
     $p= $pdo->prepare("SELECT sede_esame,data_esame FROM sessione_esame,storico_candidato
     WHERE id_storico_candidato = (SELECT id_candidato FROM candidato WHERE codice_fiscale = ?) 
-     AND id_storico_esame = id_esame AND archiviato='No'");
+     AND id_storico_esame = id_esame AND archiviato='No' AND id_esame<>1");
      $p->bindValue(1,$row['codice_fiscale']);
     $p->execute();
     $datiEsame=$p->fetch();
