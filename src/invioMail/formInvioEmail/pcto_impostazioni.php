@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     
         <title>Impostazioni</title>
-        <link rel="stylesheet" href="./parametriMail.css">
+        <link rel="stylesheet" href="../../css/parametriMail.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         
