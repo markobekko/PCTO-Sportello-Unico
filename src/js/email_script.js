@@ -4,10 +4,14 @@ function invioMail(){
     $.ajax({
         type:"POST",
         url: "../invioMail/email/email.php",
-        success: function(){//email inviate con successo
+        success: function(temp){//email inviate con successo
+            if(temp.includes("NotSent")){
+                alert("Non Inviato\nPossibile errore nel server,nella mail o la password del proprio account");
+            }else{
             console.log("Inviato");
             alert("Inviato");
             aggiornaTabella();
+            }
         },
         unsuccessful: function(){//email non inviate
             console.log("Non inviato");
