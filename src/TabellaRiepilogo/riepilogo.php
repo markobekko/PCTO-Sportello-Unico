@@ -48,6 +48,7 @@
                             <th>Data e Sede</th>
                             <th>Invito Spedito</th>
                             <th>Esito Esame</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody id='datiTabella'>
