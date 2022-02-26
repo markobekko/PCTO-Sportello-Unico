@@ -42,6 +42,7 @@
           <td><textarea id="fascia" name="fascia" rows="1" cols="80" ></textarea></td>
        </tr>
       </table>
+      <br>
         <script>
         //blocco in javascript per insierire l'icona dell psw e premendola poterla vederla o non
           const togglePassword = document.querySelector("#togglePassword");
@@ -56,8 +57,9 @@
           }); 
 
       </script> 
-      <input type="submit" class="impostazioni button1" name="salva" id="salva" value="Salva">
+      <input type="submit" class="impostazioniSalva" name="salva" id="salva" value="Salva">
     </form>
+    <br>
     <button class="buttonritorna" name="ritornaB" id="ritornaB" onclick=ritornaP() >Ritorna ai parametri generali invito</button>
           <script type="text/javascript">
             function ritornaP(){

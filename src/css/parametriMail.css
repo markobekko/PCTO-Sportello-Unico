@@ -9,7 +9,7 @@ section {
     display: block;
 }
 body{
-    background: #fafaef;
+    background: rgb(230, 233, 241);
 }
 textarea {
     resize: none;
@@ -28,11 +28,11 @@ table{
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    background-color:#fbfbfb;
+    background-color:#B5CFFE;
 }
 .buttonsalva:hover {
-    background-color: #51282a;
-    color: white;
+    background-color: #FFF09D;
+    color: black;
   }
 .buttonesci{
     border: none;
@@ -44,11 +44,12 @@ table{
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    background-color:#fbfbfb;
+    background-color:#B5CFFE;
+    
 }
 .buttonesci:hover {
-    background-color: #51282a;
-    color: white;
+    background-color: #FFF09D;
+    color: black;
   }
 .impostazioni {
     border: none;
@@ -61,27 +62,44 @@ table{
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    background-color:#fbfbfb;
+    background-color:#B5CFFE;
 }
 .impostazioni:hover{
-    background-color: #51282a;
-    color: white;
+    background-color: #FFF09D;
+    color: black;
 }
-.buttonritorna {
+.impostazioniSalva {
     border: none;
     color: rgba(12, 12, 12, 0.548);
-    padding: 1% 3%;
+    padding: 1% 15.1%;
     text-align: center;
     font-size: 106%;
     position: relative;
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    background-color:#fbfbfb;
+    background-color:#B5CFFE;
+}
+.impostazioniSalva:hover{
+    background-color: #FFF09D;
+    color: black;
+}
+.buttonritorna {
+    border: none;
+    color: rgba(12, 12, 12, 0.548);
+    padding: 1% 8%;
+    text-align: center;
+    font-size: 106%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color:#B5CFFE;
+    
 }
 .buttonritorna:hover {
-    background-color: #51282a;
-    color: white;
+    background-color: #FFF09D;
+    color: black;
   }
 .buttonritorna1 {
     border: none;
@@ -93,11 +111,11 @@ table{
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    background-color:#fbfbfb;
+    background-color:#B5CFFE;
 }
 .buttonritorna1:hover {
-    background-color: #51282a;
-    color: white;
+    background-color: #FFF09D;
+    color: black;
   }
 
 h1{
